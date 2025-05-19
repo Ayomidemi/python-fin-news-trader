@@ -1,0 +1,6 @@
+.venv
+**/venv
+.env
+.vscode
+data_entry_exercise.py
+**/__pycache__/

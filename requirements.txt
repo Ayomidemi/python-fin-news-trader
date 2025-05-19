@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+plotly
+yfinance
+nltk
+spacy
+trafilatura
+beautifulsoup4
+tqdm
+requests
