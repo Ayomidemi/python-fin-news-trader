@@ -7,6 +7,15 @@ from datetime import datetime, timedelta
 import time
 import os
 
+# Configuration and logging
+from config import get_config
+from logger import get_app_logger, LogContext
+from errors import (
+    FinNewsError, DataSourceError, NewsScrapingError, 
+    SentimentAnalysisError, TradingError, handle_errors,
+    ErrorRecovery, validate_ticker
+)
+
 # Custom module imports
 from news_scraper import fetch_wsj_news
 from sentiment_analyzer import analyze_sentiment, get_named_entities
@@ -16,6 +25,10 @@ from data_visualizer import plot_sentiment_over_time, plot_portfolio_performance
 from backtester import run_backtest
 from utils import format_currency, get_stock_data, load_data, save_data
 
+# Initialize configuration and logging
+config = get_config()
+logger = get_app_logger()
+
 # Set page configuration
 st.set_page_config(
     page_title="FinNews Trader",
@@ -23,10 +36,12 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize session state
+logger.info("Starting FinNews Trader application")
+
+# Initialize session state with configuration defaults
 if 'portfolio' not in st.session_state:
     st.session_state.portfolio = {
-        'cash': 100000.0,
+        'cash': config.backtest.initial_capital,
         'positions': {},
         'history': [],
         'performance': [],
@@ -41,6 +56,9 @@ if 'news_data' not in st.session_state:
 if 'last_update' not in st.session_state:
     st.session_state.last_update = None
 
+if 'config' not in st.session_state:
+    st.session_state.config = config
+
 # Main app header
 st.title("📊 FinNews Trader")
 st.subheader("Algorithmic Trading System Based on Financial News Analysis")
@@ -49,87 +67,176 @@ st.subheader("Algorithmic Trading System Based on Financial News Analysis")
 st.sidebar.header("Configuration")
 
 # Select stocks to track
-default_stocks = ["AAPL", "MSFT", "GOOGL", "AMZN", "META"]
 tracked_stocks = st.sidebar.multiselect(
     "Select stocks to track",
-    options=["AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA", "NVDA", "JPM", "V", "WMT"],
-    default=default_stocks
+    options=config.ui.available_stocks,
+    default=config.ui.default_stocks
 )
 
 # Strategy parameters
 st.sidebar.subheader("Strategy Parameters")
-sentiment_threshold = st.sidebar.slider("Sentiment Threshold", -1.0, 1.0, 0.3, 0.05)
-position_size_pct = st.sidebar.slider("Position Size (%)", 5, 30, 10, 5) / 100
-stop_loss_pct = st.sidebar.slider("Stop Loss (%)", 5, 20, 10, 1) / 100
-take_profit_pct = st.sidebar.slider("Take Profit (%)", 5, 30, 15, 1) / 100
+sentiment_threshold = st.sidebar.slider(
+    "Sentiment Threshold", 
+    -1.0, 1.0, 
+    config.trading.default_sentiment_threshold, 
+    0.05
+)
+position_size_pct = st.sidebar.slider(
+    "Position Size (%)", 
+    5, 30, 
+    int(config.trading.default_position_size * 100), 
+    5
+) / 100
+stop_loss_pct = st.sidebar.slider(
+    "Stop Loss (%)", 
+    5, 20, 
+    int(config.trading.default_stop_loss * 100), 
+    1
+) / 100
+take_profit_pct = st.sidebar.slider(
+    "Take Profit (%)", 
+    5, 30, 
+    int(config.trading.default_take_profit * 100), 
+    1
+) / 100
+
+# Configuration display (if debug mode enabled)
+if config.ui.show_debug_info:
+    st.sidebar.subheader("Debug Info")
+    st.sidebar.text(f"Config file: {os.getenv('CONFIG_FILE', 'default')}")
+    st.sidebar.text(f"Log level: {config.logging.level}")
+    st.sidebar.text(f"Cache TTL: {config.data_sources.cache_ttl_seconds}s")
 
 # Backtest settings
 use_backtest = st.sidebar.checkbox("Run Backtest")
 if use_backtest:
-    backtest_days = st.sidebar.slider("Backtest Days", 7, 90, 30)
+    backtest_days = st.sidebar.slider(
+        "Backtest Days", 
+        7, 90, 
+        config.backtest.default_period_days
+    )
     backtest_start = datetime.now() - timedelta(days=backtest_days)
     backtest_end = datetime.now()
 
 # Fetch new data button
 if st.sidebar.button("Fetch Latest Data"):
-    with st.spinner("Fetching latest financial news and stock data..."):
-        # Fetch news data
-        news_data = []
-        for stock in tracked_stocks:
-            try:
-                stock_news = fetch_wsj_news(stock)
-                for article in stock_news:
-                    article['ticker'] = stock
-                news_data.extend(stock_news)
-            except Exception as e:
-                st.error(f"Error fetching news for {stock}: {str(e)}")
-        
-        # Sort by date
-        news_data = sorted(news_data, key=lambda x: x['date'], reverse=True)
-        
-        # Analyze sentiment and extract entities
-        for article in news_data:
-            try:
-                sentiment = analyze_sentiment(article['title'] + " " + article['content'])
-                entities = get_named_entities(article['content'])
-                article['sentiment'] = sentiment
-                article['entities'] = entities
-            except Exception as e:
-                st.error(f"Error in sentiment analysis: {str(e)}")
-                article['sentiment'] = 0
-                article['entities'] = []
-        
-        # Fetch stock data
-        stock_data = {}
-        for stock in tracked_stocks:
-            try:
-                stock_data[stock] = get_stock_data(stock)
-            except Exception as e:
-                st.error(f"Error fetching stock data for {stock}: {str(e)}")
-        
-        # Generate trading signals
-        signals = generate_signals(
-            news_data, 
-            stock_data, 
-            sentiment_threshold,
-            position_size_pct,
-            stop_loss_pct,
-            take_profit_pct
-        )
-        
-        # Update session state
-        st.session_state.news_data = news_data
-        st.session_state.signals = signals
-        st.session_state.last_update = datetime.now()
-        
-        # Update portfolio based on signals
-        st.session_state.portfolio = update_portfolio(
-            st.session_state.portfolio,
-            signals,
-            stock_data
-        )
-        
-        st.success("Data updated successfully!")
+    with LogContext(logger, "fetch_latest_data"):
+        with st.spinner("Fetching latest financial news and stock data..."):
+            # Validate tracked stocks
+            validated_stocks = []
+            for stock in tracked_stocks:
+                try:
+                    validated_stock = validate_ticker(stock)
+                    validated_stocks.append(validated_stock)
+                except Exception as e:
+                    st.error(f"Invalid ticker {stock}: {str(e)}")
+                    logger.warning(f"Invalid ticker provided: {stock}")
+            
+            if not validated_stocks:
+                st.error("No valid stocks selected")
+                logger.error("No valid stocks selected for data fetching")
+            else:
+                # Fetch news data with error handling
+                news_data = []
+                progress_bar = st.progress(0)
+                total_stocks = len(validated_stocks)
+                
+                for i, stock in enumerate(validated_stocks):
+                    try:
+                        with LogContext(logger, f"fetch_news_{stock}", ticker=stock):
+                            stock_news = fetch_wsj_news(stock, config.data_sources.max_articles_per_stock)
+                            for article in stock_news:
+                                article['ticker'] = stock
+                            news_data.extend(stock_news)
+                            logger.info(f"Fetched {len(stock_news)} articles for {stock}")
+                    except NewsScrapingError as e:
+                        st.warning(f"Could not fetch news for {stock}: {e.message}")
+                        logger.warning(f"News scraping failed for {stock}: {e.message}")
+                    except Exception as e:
+                        st.error(f"Unexpected error fetching news for {stock}: {str(e)}")
+                        logger.error(f"Unexpected error fetching news for {stock}: {str(e)}", exc_info=True)
+                    
+                    progress_bar.progress((i + 1) / total_stocks)
+                
+                progress_bar.empty()
+                
+                # Sort by date
+                news_data = sorted(news_data, key=lambda x: x['date'], reverse=True)
+                logger.info(f"Total articles fetched: {len(news_data)}")
+                
+                # Analyze sentiment and extract entities
+                with st.spinner("Analyzing sentiment..."):
+                    for article in news_data:
+                        try:
+                            with LogContext(logger, f"sentiment_analysis", article_title=article['title'][:50]):
+                                sentiment = analyze_sentiment(
+                                    article['title'] + " " + article['content'],
+                                    financial_adjustment=config.sentiment.custom_terms_enabled
+                                )
+                                entities = get_named_entities(article['content'])
+                                article['sentiment'] = sentiment
+                                article['entities'] = entities
+                        except SentimentAnalysisError as e:
+                            st.warning(f"Sentiment analysis failed for article: {e.message}")
+                            article['sentiment'] = 0
+                            article['entities'] = []
+                        except Exception as e:
+                            logger.error(f"Unexpected error in sentiment analysis: {str(e)}", exc_info=True)
+                            article['sentiment'] = 0
+                            article['entities'] = []
+                
+                # Fetch stock data with error handling
+                stock_data = {}
+                with st.spinner("Fetching stock data..."):
+                    for stock in validated_stocks:
+                        try:
+                            with LogContext(logger, f"fetch_stock_data_{stock}", ticker=stock):
+                                stock_data[stock] = get_stock_data(stock, config.data_sources.stock_data_period)
+                                logger.info(f"Fetched stock data for {stock}")
+                        except Exception as e:
+                            st.error(f"Error fetching stock data for {stock}: {str(e)}")
+                            logger.error(f"Error fetching stock data for {stock}: {str(e)}", exc_info=True)
+                
+                # Generate trading signals with error handling
+                try:
+                    with LogContext(logger, "generate_signals"):
+                        signals = generate_signals(
+                            news_data, 
+                            stock_data, 
+                            sentiment_threshold,
+                            position_size_pct,
+                            stop_loss_pct,
+                            take_profit_pct
+                        )
+                        logger.info(f"Generated {len(signals)} trading signals")
+                except TradingError as e:
+                    st.error(f"Error generating signals: {e.message}")
+                    signals = []
+                except Exception as e:
+                    st.error(f"Unexpected error generating signals: {str(e)}")
+                    logger.error(f"Unexpected error generating signals: {str(e)}", exc_info=True)
+                    signals = []
+                
+                # Update session state
+                st.session_state.news_data = news_data
+                st.session_state.signals = signals
+                st.session_state.last_update = datetime.now()
+                
+                # Update portfolio based on signals
+                try:
+                    with LogContext(logger, "update_portfolio"):
+                        st.session_state.portfolio = update_portfolio(
+                            st.session_state.portfolio,
+                            signals,
+                            stock_data
+                        )
+                        logger.info("Portfolio updated successfully")
+                except Exception as e:
+                    st.error(f"Error updating portfolio: {str(e)}")
+                    logger.error(f"Error updating portfolio: {str(e)}", exc_info=True)
+                
+                st.success(f"Data updated successfully! Fetched {len(news_data)} articles and generated {len(signals)} signals.")
+                logger.info("Data fetch completed successfully")
 
 # Main content area - use tabs
 tab1, tab2, tab3, tab4 = st.tabs(["Dashboard", "News Analysis", "Trading Signals", "Portfolio"])

@@ -9,3 +9,4 @@ trafilatura
 beautifulsoup4
 tqdm
 requests
+pyyaml

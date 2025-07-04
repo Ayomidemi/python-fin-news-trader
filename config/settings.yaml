@@ -1,0 +1,120 @@
+# FinNewsTrader Configuration File
+# Copy this to config/settings.yaml and customize as needed
+
+trading:
+  # Default position size as percentage of portfolio (0.0 to 1.0)
+  default_position_size: 0.10
+
+  # Default stop loss percentage (0.0 to 1.0)
+  default_stop_loss: 0.10
+
+  # Default take profit percentage (0.0 to 1.0)
+  default_take_profit: 0.15
+
+  # Default sentiment threshold for signal generation (-1.0 to 1.0)
+  default_sentiment_threshold: 0.3
+
+  # Maximum portfolio allocation to prevent overexposure (0.0 to 1.0)
+  max_portfolio_allocation: 0.80
+
+  # Minimum cash reserve to maintain (0.0 to 1.0)
+  min_cash_reserve: 0.20
+
+sentiment:
+  # Sentiment analysis model: "vader" or "finbert"
+  model: "vader"
+
+  # Sentiment threshold for signal generation (-1.0 to 1.0)
+  threshold: 0.3
+
+  # Weight for financial-specific terms adjustment
+  financial_weight: 0.05
+
+  # Enable custom financial terms dictionary
+  custom_terms_enabled: true
+
+data_sources:
+  # News APIs to use (currently only yahoo_finance is implemented)
+  news_apis:
+    - "yahoo_finance"
+
+  # Maximum articles to fetch per stock
+  max_articles_per_stock: 10
+
+  # Stock data period for technical analysis
+  stock_data_period: "3mo"
+
+  # Cache TTL in seconds (300 = 5 minutes)
+  cache_ttl_seconds: 300
+
+  # Number of retry attempts for failed requests
+  retry_attempts: 3
+
+  # Timeout for API requests in seconds
+  timeout_seconds: 30
+
+ui:
+  # Default stocks to display when app starts
+  default_stocks:
+    - "AAPL"
+    - "MSFT"
+    - "GOOGL"
+    - "AMZN"
+    - "META"
+
+  # Available stocks for selection
+  available_stocks:
+    - "AAPL"
+    - "MSFT"
+    - "GOOGL"
+    - "AMZN"
+    - "META"
+    - "TSLA"
+    - "NVDA"
+    - "JPM"
+    - "V"
+    - "WMT"
+
+  # Auto-refresh interval in seconds (0 to disable)
+  refresh_interval_seconds: 60
+
+  # Default chart height in pixels
+  chart_height: 500
+
+  # Show debug information in UI
+  show_debug_info: false
+
+backtest:
+  # Initial capital for backtesting
+  initial_capital: 100000.0
+
+  # Commission per trade (0.0 for no commission)
+  commission_per_trade: 0.0
+
+  # Slippage in basis points (0.0 for no slippage)
+  slippage_bps: 0.0
+
+  # Default backtest period in days
+  default_period_days: 30
+
+  # Minimum trade amount
+  min_trade_amount: 100.0
+
+logging:
+  # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+
+  # Log format string
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+  # Log file path (relative to project root)
+  log_file: "logs/trader.log"
+
+  # Maximum log file size in MB before rotation
+  max_file_size_mb: 10
+
+  # Number of backup log files to keep
+  backup_count: 3
+
+  # Enable console logging (in addition to file)
+  console_logging: true
