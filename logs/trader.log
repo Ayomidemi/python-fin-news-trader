@@ -1,1 +1,189 @@
 2025-07-04 15:23:04,857 - app - INFO - Starting FinNews Trader application
+2025-07-04 15:38:07,469 - app - INFO - Starting FinNews Trader application
+2025-07-04 15:38:07,474 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-07-04 15:39:21,555 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-07-04 15:42:31,061 - app - INFO - Starting FinNews Trader application
+2025-10-14 12:57:45,220 - app - INFO - Starting FinNews Trader application
+2025-10-14 12:57:45,475 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-14 12:57:48,874 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 12:57:48,874 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 12:57:48,875 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 12:57:48,876 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 12:57:48,877 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 12:58:45,317 - app - INFO - Starting FinNews Trader application
+2025-10-14 12:58:45,538 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-14 13:00:25,710 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:00:27,322 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:00:27,323 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:00:27,323 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:00:27,324 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:00:27,324 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:00:27,454 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:00:28,265 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:00:28,265 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:00:28,265 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:00:28,266 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:00:28,267 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:01:19,472 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:01:19,698 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:01:21,355 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:01:21,356 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:01:21,356 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:01:21,356 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:01:21,357 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:01:25,366 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:01:26,935 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:01:26,936 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:01:26,936 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:01:26,936 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:01:26,937 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:01:42,845 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:01:44,489 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:01:44,490 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:01:44,490 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:01:44,490 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:01:44,491 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:01:49,049 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:01:50,634 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:01:50,635 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:01:50,636 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:01:50,637 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:01:50,637 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:01:58,873 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:02:00,438 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:02:00,438 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:02:00,439 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:02:00,440 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:02:00,440 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:09:36,938 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:09:36,943 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-14 13:09:38,544 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:09:38,544 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:09:38,544 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:09:38,544 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:09:38,544 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:09:46,562 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:09:48,109 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:09:48,109 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:09:48,109 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:09:48,110 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:09:48,110 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:09:48,331 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:11:02,907 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:11:02,924 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-14 13:11:05,531 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:11:05,531 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:11:05,532 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:11:05,532 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:11:05,532 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:11:21,917 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:11:21,925 - app - INFO - Starting fetch_latest_data - 
+2025-10-14 13:11:21,926 - app - INFO - Starting async_complete_pipeline - 
+2025-10-14 13:11:21,927 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META']
+2025-10-14 13:11:21,927 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-14 13:11:21,927 - async_processor - INFO - Fetching news for 5 tickers in parallel
+2025-10-14 13:11:21,927 - async_processor - INFO - Fetching stock data for 5 tickers in parallel
+2025-10-14 13:11:22,687 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-14 13:11:22,688 - async_processor - INFO - Fetched stock data for MSFT
+2025-10-14 13:11:22,688 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-14 13:11:22,688 - async_processor - INFO - Fetched stock data for AMZN
+2025-10-14 13:11:22,688 - async_processor - INFO - Fetched stock data for META
+2025-10-14 13:11:22,908 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-14 13:11:22,908 - async_processor - INFO - Fetched 10 articles for MSFT
+2025-10-14 13:11:22,909 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-14 13:11:22,909 - async_processor - INFO - Fetched 10 articles for AMZN
+2025-10-14 13:11:22,909 - async_processor - INFO - Fetched 10 articles for META
+2025-10-14 13:11:22,909 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-14 13:11:22,910 - async_processor - INFO - Analyzing sentiment for 50 articles in parallel
+2025-10-14 13:11:22,921 - async_processor - INFO - Complete pipeline processed in 0.99 seconds
+2025-10-14 13:11:22,921 - async_processor - INFO - Completed complete_pipeline in 0.99s
+2025-10-14 13:11:22,935 - app - INFO - Async pipeline: fetched 50 articles total
+2025-10-14 13:11:22,935 - app - INFO - Completed async_complete_pipeline in 1.01s
+2025-10-14 13:11:22,935 - app - INFO - Starting generate_signals - 
+2025-10-14 13:11:22,936 - app - INFO - Generated 0 trading signals
+2025-10-14 13:11:22,936 - app - INFO - Completed generate_signals in 0.00s
+2025-10-14 13:11:22,937 - app - INFO - Starting update_portfolio - 
+2025-10-14 13:11:22,937 - app - INFO - Portfolio updated successfully
+2025-10-14 13:11:22,938 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-14 13:11:22,938 - app - INFO - Data fetch completed successfully
+2025-10-14 13:11:22,939 - app - INFO - Completed fetch_latest_data in 1.01s
+2025-10-14 13:11:25,813 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:11:25,814 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:11:25,814 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:11:25,815 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:11:25,815 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:11:42,987 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:11:44,152 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:11:45,543 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:11:45,543 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:11:45,544 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:11:45,544 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:11:45,544 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:12:01,124 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:12:02,800 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:12:02,801 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:12:02,801 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:12:02,802 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:12:02,802 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:12:41,347 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:12:41,500 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:12:43,114 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:12:43,114 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:12:43,115 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:12:43,115 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:12:43,115 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:12:46,086 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:12:47,659 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:12:47,659 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:12:47,660 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:12:47,660 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:12:47,660 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:14:25,089 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:14:25,098 - app - INFO - Starting fetch_latest_data - 
+2025-10-14 13:14:25,100 - app - INFO - Starting async_complete_pipeline - 
+2025-10-14 13:14:25,100 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'MSFT', 'GOOGL', 'NVDA']
+2025-10-14 13:14:25,101 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-14 13:14:25,101 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2025-10-14 13:14:25,101 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2025-10-14 13:14:26,036 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-14 13:14:26,036 - async_processor - INFO - Fetched stock data for MSFT
+2025-10-14 13:14:26,036 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-14 13:14:26,037 - async_processor - INFO - Fetched stock data for NVDA
+2025-10-14 13:14:26,268 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-14 13:14:26,269 - async_processor - INFO - Fetched 10 articles for MSFT
+2025-10-14 13:14:26,269 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-14 13:14:26,269 - async_processor - INFO - Fetched 10 articles for NVDA
+2025-10-14 13:14:26,269 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-14 13:14:26,270 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2025-10-14 13:14:26,275 - async_processor - INFO - Complete pipeline processed in 1.17 seconds
+2025-10-14 13:14:26,275 - async_processor - INFO - Completed complete_pipeline in 1.17s
+2025-10-14 13:14:26,288 - app - INFO - Async pipeline: fetched 40 articles total
+2025-10-14 13:14:26,288 - app - INFO - Completed async_complete_pipeline in 1.19s
+2025-10-14 13:14:26,288 - app - INFO - Starting generate_signals - 
+2025-10-14 13:14:26,289 - app - INFO - Generated 0 trading signals
+2025-10-14 13:14:26,289 - app - INFO - Completed generate_signals in 0.00s
+2025-10-14 13:14:26,290 - app - INFO - Starting update_portfolio - 
+2025-10-14 13:14:26,290 - app - INFO - Portfolio updated successfully
+2025-10-14 13:14:26,291 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-14 13:14:26,291 - app - INFO - Data fetch completed successfully
+2025-10-14 13:14:26,291 - app - INFO - Completed fetch_latest_data in 1.19s
+2025-10-14 13:14:28,243 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:14:28,243 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:14:28,244 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:14:28,244 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:14:28,244 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:14:47,409 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:14:49,421 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:14:49,421 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:14:49,421 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:14:49,421 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:14:49,422 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:14:49,426 - big_mover_tracker - INFO - Added AAPL to big mover monitoring
+2025-10-14 13:15:01,982 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:15:03,991 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:15:03,991 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:15:03,992 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:15:03,992 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:15:03,993 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:15:04,000 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-14 13:15:04,744 - yfinance - ERROR - $AAPL: possibly delisted; no price data found  (1m 2025-10-14 12:15:04.001052 -> 2025-10-14 13:15:04.001052) (Yahoo error = "Data doesn't exist for startDate = 1760458504, endDate = 1760462104")

@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import yaml
 from pathlib import Path
 
@@ -31,10 +31,22 @@ class DataSourceConfig:
     cache_ttl_seconds: int = 300
     retry_attempts: int = 3
     timeout_seconds: int = 30
+    use_async_processing: bool = True
+    max_async_workers: int = 10
     
     def __post_init__(self):
         if self.news_apis is None:
             self.news_apis = ["yahoo_finance"]
+
+@dataclass
+class CacheConfig:
+    """Cache configuration"""
+    backend: str = "memory"
+    max_memory_entries: int = 1000
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+    redis_db: int = 0
+    redis_password: Optional[str] = None
 
 @dataclass
 class UIConfig:
@@ -80,6 +92,7 @@ class Config:
         self.trading = TradingConfig()
         self.sentiment = SentimentConfig()
         self.data_sources = DataSourceConfig()
+        self.cache = CacheConfig()
         self.ui = UIConfig()
         self.backtest = BacktestConfig()
         self.logging = LoggingConfig()
@@ -103,6 +116,8 @@ class Config:
                 self._update_dataclass(self.sentiment, data['sentiment'])
             if 'data_sources' in data:
                 self._update_dataclass(self.data_sources, data['data_sources'])
+            if 'cache' in data:
+                self._update_dataclass(self.cache, data['cache'])
             if 'ui' in data:
                 self._update_dataclass(self.ui, data['ui'])
             if 'backtest' in data:
@@ -171,6 +186,16 @@ class Config:
                 'cache_ttl_seconds': self.data_sources.cache_ttl_seconds,
                 'retry_attempts': self.data_sources.retry_attempts,
                 'timeout_seconds': self.data_sources.timeout_seconds,
+                'use_async_processing': self.data_sources.use_async_processing,
+                'max_async_workers': self.data_sources.max_async_workers,
+            },
+            'cache': {
+                'backend': self.cache.backend,
+                'max_memory_entries': self.cache.max_memory_entries,
+                'redis_host': self.cache.redis_host,
+                'redis_port': self.cache.redis_port,
+                'redis_db': self.cache.redis_db,
+                'redis_password': self.cache.redis_password,
             },
             'ui': {
                 'default_stocks': self.ui.default_stocks,

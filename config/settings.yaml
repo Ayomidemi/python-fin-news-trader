@@ -53,6 +53,25 @@ data_sources:
   # Timeout for API requests in seconds
   timeout_seconds: 30
 
+  # Enable async processing for parallel data fetching
+  use_async_processing: true
+
+  # Maximum parallel workers for async operations
+  max_async_workers: 10
+
+cache:
+  # Cache backend: "memory" or "redis"
+  backend: "memory"
+
+  # Maximum cache entries for memory backend
+  max_memory_entries: 1000
+
+  # Redis connection settings (if using redis backend)
+  redis_host: "localhost"
+  redis_port: 6379
+  redis_db: 0
+  redis_password: null
+
 ui:
   # Default stocks to display when app starts
   default_stocks:
@@ -82,7 +101,7 @@ ui:
   chart_height: 500
 
   # Show debug information in UI
-  show_debug_info: false
+  show_debug_info: true
 
 backtest:
   # Initial capital for backtesting

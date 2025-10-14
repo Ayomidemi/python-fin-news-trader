@@ -26,7 +26,6 @@ from portfolio_tracker import update_portfolio, calculate_performance
 from data_visualizer import plot_sentiment_over_time, plot_portfolio_performance, plot_stock_price_with_signals
 from backtester import run_backtest
 from utils import format_currency, get_stock_data, load_data, save_data
-from big_mover_dashboard import run_big_mover_dashboard
 
 # Initialize configuration and logging
 config = get_config()
@@ -281,7 +280,7 @@ if st.sidebar.button("Fetch Latest Data"):
                 logger.info("Data fetch completed successfully")
 
 # Main content area - use tabs
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Dashboard", "News Analysis", "Trading Signals", "Portfolio", "Big Mover Tracker"])
+tab1, tab2, tab3, tab4 = st.tabs(["Dashboard", "News Analysis", "Trading Signals", "Portfolio"])
 
 with tab1:
     # Dashboard Overview
@@ -541,14 +540,6 @@ with tab4:
         st.dataframe(history_df, use_container_width=True)
     else:
         st.info("No trade history available.")
-
-with tab5:
-    # Big Mover Tracker
-    st.header("🚀 Big Mover Tracker")
-    st.subheader("Real-time monitoring for stocks before they skyrocket")
-    
-    # Run the big mover dashboard
-    run_big_mover_dashboard()
 
 # Footer
 st.markdown("---")
