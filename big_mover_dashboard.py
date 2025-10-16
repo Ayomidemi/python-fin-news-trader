@@ -17,6 +17,7 @@ from big_mover_tracker import BigMoverTracker, BigMoverAlert, MovementType
 from volume_analyzer import VolumeAnalyzer, VolumeAlert, VolumePattern
 from news_correlation_engine import NewsCorrelationEngine, NewsCorrelation
 from alert_system import AlertSystem, Alert, AlertPriority
+from stock_list_fetcher import get_available_stocks, search_stocks, get_popular_stock_lists
 
 logger = get_logger(__name__)
 
@@ -58,9 +59,6 @@ class BigMoverDashboard:
     
     def render_dashboard(self):
         """Render the main dashboard"""
-        st.title("🚀 Big Mover Tracker")
-        st.subheader("Real-time monitoring for stocks before they skyrocket")
-        
         # Sidebar configuration
         self._render_sidebar()
         
@@ -95,14 +93,81 @@ class BigMoverDashboard:
         # Ticker selection
         st.sidebar.subheader("Monitored Tickers")
         
-        # Add ticker input
-        new_ticker = st.sidebar.text_input("Add ticker to monitor", placeholder="e.g., AAPL")
-        if st.sidebar.button("Add Ticker") and new_ticker:
-            if new_ticker.upper() not in st.session_state.monitored_tickers:
-                st.session_state.monitored_tickers.append(new_ticker.upper())
-                st.sidebar.success(f"Added {new_ticker.upper()}")
+        # Stock source selection
+        stock_source = st.sidebar.selectbox(
+            "Stock List Source",
+            ["Popular Lists", "S&P 500", "NASDAQ", "NYSE", "All Stocks", "Search"],
+            index=0,
+            key="big_mover_stock_source"
+        )
+        
+        # Get available stocks based on source
+        try:
+            if stock_source == "Popular Lists":
+                popular_lists = get_popular_stock_lists()
+                selected_list = st.sidebar.selectbox(
+                    "Choose a popular list",
+                    list(popular_lists.keys()),
+                    index=0,
+                    key="big_mover_popular_list"
+                )
+                available_stocks = popular_lists[selected_list]
+            elif stock_source == "S&P 500":
+                available_stocks = get_available_stocks("sp500")
+            elif stock_source == "NASDAQ":
+                available_stocks = get_available_stocks("nasdaq")
+            elif stock_source == "NYSE":
+                available_stocks = get_available_stocks("nyse")
+            elif stock_source == "All Stocks":
+                available_stocks = get_available_stocks("all")
+            else:  # Search
+                search_query = st.sidebar.text_input("Search for stocks", placeholder="e.g., AAPL, Apple, Tesla", key="big_mover_search")
+                if search_query:
+                    available_stocks = search_stocks(search_query)
+                else:
+                    available_stocks = []
+            
+            # Fallback to default stocks if no stocks are available
+            if not available_stocks:
+                available_stocks = ["AAPL", "MSFT", "GOOGL", "AMZN", "META"]
+                
+        except Exception as e:
+            logger.error(f"Error fetching stocks: {str(e)}")
+            # Fallback to default stocks
+            available_stocks = ["AAPL", "MSFT", "GOOGL", "AMZN", "META"]
+        
+        # Limit the number of stocks shown for performance
+        if len(available_stocks) > 100:
+            available_stocks = available_stocks[:100]
+            st.sidebar.info(f"Showing first 100 stocks")
+        
+        # Add ticker from dropdown
+        if available_stocks:
+            # Ensure we have valid options
+            ticker_options = [""] + available_stocks
+            new_ticker = st.sidebar.selectbox(
+                "Select ticker to add",
+                ticker_options,
+                index=0,
+                key="big_mover_ticker_select"
+            )
+            if st.sidebar.button("Add Ticker") and new_ticker:
+                if new_ticker.upper() not in st.session_state.monitored_tickers:
+                    st.session_state.monitored_tickers.append(new_ticker.upper())
+                    st.sidebar.success(f"Added {new_ticker.upper()}")
+                    st.rerun()
+                else:
+                    st.sidebar.warning(f"{new_ticker.upper()} already monitored")
+        
+        # Manual ticker input (fallback)
+        manual_ticker = st.sidebar.text_input("Or enter ticker manually", placeholder="e.g., AAPL", key="big_mover_manual")
+        if st.sidebar.button("Add Manual Ticker") and manual_ticker:
+            if manual_ticker.upper() not in st.session_state.monitored_tickers:
+                st.session_state.monitored_tickers.append(manual_ticker.upper())
+                st.sidebar.success(f"Added {manual_ticker.upper()}")
+                st.rerun()
             else:
-                st.sidebar.warning(f"{new_ticker.upper()} already monitored")
+                st.sidebar.warning(f"{manual_ticker.upper()} already monitored")
         
         # Display monitored tickers
         if st.session_state.monitored_tickers:

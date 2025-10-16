@@ -187,3 +187,659 @@
 2025-10-14 13:15:03,993 - alert_system - INFO - Added alert rule: high_impact_news
 2025-10-14 13:15:04,000 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
 2025-10-14 13:15:04,744 - yfinance - ERROR - $AAPL: possibly delisted; no price data found  (1m 2025-10-14 12:15:04.001052 -> 2025-10-14 13:15:04.001052) (Yahoo error = "Data doesn't exist for startDate = 1760458504, endDate = 1760462104")
+2025-10-14 13:44:14,947 - app - INFO - Starting FinNews Trader application
+2025-10-14 13:44:17,010 - alert_system - INFO - Added alert rule: price_spike
+2025-10-14 13:44:17,011 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-14 13:44:17,011 - alert_system - INFO - Added alert rule: gap_up
+2025-10-14 13:44:17,011 - alert_system - INFO - Added alert rule: breakout
+2025-10-14 13:44:17,011 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-14 13:44:17,022 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-14 13:44:18,446 - yfinance - ERROR - $AAPL: possibly delisted; no price data found  (1m 2025-10-14 12:44:17.022672 -> 2025-10-14 13:44:17.022672) (Yahoo error = "Data doesn't exist for startDate = 1760460257, endDate = 1760463857")
+2025-10-16 21:37:34,547 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:37:56,928 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:37:57,469 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:38:17,198 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:38:17,208 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 21:38:21,143 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:38:21,144 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:38:21,144 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:38:21,144 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:38:21,145 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:38:33,692 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:38:33,696 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 21:38:35,468 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:38:35,468 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:38:35,468 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:38:35,469 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:38:35,469 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:38:44,912 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:38:45,404 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:38:46,955 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:38:46,956 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:38:46,956 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:38:46,956 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:38:46,957 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:38:56,820 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:38:57,309 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:38:58,580 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:38:59,065 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:38:59,082 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:38:59,082 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:38:59,083 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:38:59,083 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:38:59,083 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:39:26,199 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:39:26,703 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:39:26,722 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:39:26,722 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:39:26,723 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:39:26,723 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:39:26,724 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:39:45,872 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:39:46,389 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:39:46,406 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:39:46,407 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:39:46,408 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:39:46,409 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:39:46,409 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:39:51,747 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 21:39:53,338 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:39:53,907 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 21:39:53,924 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:39:53,924 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:39:53,924 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:39:53,925 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:39:53,925 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:03,364 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 21:40:05,545 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:07,491 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:07,492 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:07,492 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:07,492 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:07,492 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:12,173 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 21:40:16,671 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:18,097 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:18,098 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:18,098 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:18,099 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:18,099 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:18,413 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:19,881 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:19,881 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:19,881 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:19,881 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:19,881 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:27,045 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:27,265 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:28,688 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:28,689 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:28,689 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:28,690 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:28,691 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:28,806 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:29,531 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:29,531 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:29,532 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:29,532 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:29,533 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:37,351 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:38,777 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:38,778 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:38,778 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:38,778 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:38,779 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:38,784 - big_mover_tracker - INFO - Added VOO to big mover monitoring
+2025-10-16 21:40:43,177 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:44,654 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:44,655 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:44,656 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:44,657 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:44,657 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:44,669 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 21:40:45,505 - yfinance - ERROR - $VOO: possibly delisted; no price data found  (1m 2025-10-16 20:40:44.670604 -> 2025-10-16 21:40:44.670604) (Yahoo error = "Data doesn't exist for startDate = 1760661644, endDate = 1760665244")
+2025-10-16 21:40:51,740 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:40:53,262 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:40:53,263 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:40:53,263 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:40:53,263 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:40:53,264 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:40:53,274 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 21:40:54,669 - yfinance - ERROR - $VOO: possibly delisted; no price data found  (1m 2025-10-16 20:40:53.274908 -> 2025-10-16 21:40:53.274908) (Yahoo error = "Data doesn't exist for startDate = 1760661653, endDate = 1760665253")
+2025-10-16 21:41:00,736 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:41:01,350 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:41:02,451 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:41:03,830 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:41:03,830 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:41:03,830 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:41:03,831 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:41:03,832 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:41:15,818 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:41:17,214 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:41:17,214 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:41:17,215 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:41:17,215 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:41:17,215 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:42:37,540 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:42:37,558 - app - INFO - Starting fetch_latest_data - 
+2025-10-16 21:42:37,559 - app - INFO - Starting async_complete_pipeline - 
+2025-10-16 21:42:37,560 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'GOOGL', 'AMZN', 'META']
+2025-10-16 21:42:37,561 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-16 21:42:37,561 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2025-10-16 21:42:37,561 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2025-10-16 21:42:38,412 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-16 21:42:38,412 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-16 21:42:38,412 - async_processor - INFO - Fetched stock data for AMZN
+2025-10-16 21:42:38,412 - async_processor - INFO - Fetched stock data for META
+2025-10-16 21:42:38,588 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-16 21:42:38,588 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-16 21:42:38,588 - async_processor - INFO - Fetched 10 articles for AMZN
+2025-10-16 21:42:38,588 - async_processor - INFO - Fetched 10 articles for META
+2025-10-16 21:42:38,589 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-16 21:42:38,589 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2025-10-16 21:42:38,598 - async_processor - INFO - Complete pipeline processed in 1.04 seconds
+2025-10-16 21:42:38,598 - async_processor - INFO - Completed complete_pipeline in 1.04s
+2025-10-16 21:42:38,609 - app - INFO - Async pipeline: fetched 40 articles total
+2025-10-16 21:42:38,610 - app - INFO - Completed async_complete_pipeline in 1.05s
+2025-10-16 21:42:38,610 - app - INFO - Starting generate_signals - 
+2025-10-16 21:42:38,611 - app - INFO - Generated 0 trading signals
+2025-10-16 21:42:38,611 - app - INFO - Completed generate_signals in 0.00s
+2025-10-16 21:42:38,613 - app - INFO - Starting update_portfolio - 
+2025-10-16 21:42:38,613 - app - INFO - Portfolio updated successfully
+2025-10-16 21:42:38,613 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-16 21:42:38,614 - app - INFO - Data fetch completed successfully
+2025-10-16 21:42:38,614 - app - INFO - Completed fetch_latest_data in 1.06s
+2025-10-16 21:42:41,079 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:42:41,080 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:42:41,080 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:42:41,081 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:42:41,081 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:51:04,100 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:51:05,453 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:51:05,453 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:51:05,454 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:51:05,454 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:51:05,455 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:54:38,596 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:54:40,024 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:54:40,025 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:54:40,027 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:54:40,027 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:54:40,028 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 21:54:57,930 - app - INFO - Starting FinNews Trader application
+2025-10-16 21:54:57,942 - app - INFO - Starting fetch_latest_data - 
+2025-10-16 21:54:57,943 - app - INFO - Starting async_complete_pipeline - 
+2025-10-16 21:54:57,944 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'GOOGL', 'AMZN', 'META']
+2025-10-16 21:54:57,944 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-16 21:54:57,944 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2025-10-16 21:54:57,945 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2025-10-16 21:54:58,716 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-16 21:54:58,716 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-16 21:54:58,716 - async_processor - INFO - Fetched stock data for AMZN
+2025-10-16 21:54:58,717 - async_processor - INFO - Fetched stock data for META
+2025-10-16 21:54:58,995 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-16 21:54:58,996 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-16 21:54:58,996 - async_processor - INFO - Fetched 10 articles for AMZN
+2025-10-16 21:54:58,996 - async_processor - INFO - Fetched 10 articles for META
+2025-10-16 21:54:58,996 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-16 21:54:58,996 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2025-10-16 21:54:59,007 - async_processor - INFO - Complete pipeline processed in 1.06 seconds
+2025-10-16 21:54:59,007 - async_processor - INFO - Completed complete_pipeline in 1.06s
+2025-10-16 21:54:59,027 - app - INFO - Async pipeline: fetched 40 articles total
+2025-10-16 21:54:59,027 - app - INFO - Completed async_complete_pipeline in 1.08s
+2025-10-16 21:54:59,027 - app - INFO - Starting generate_signals - 
+2025-10-16 21:54:59,028 - app - INFO - Generated 0 trading signals
+2025-10-16 21:54:59,028 - app - INFO - Completed generate_signals in 0.00s
+2025-10-16 21:54:59,030 - app - INFO - Starting update_portfolio - 
+2025-10-16 21:54:59,030 - app - INFO - Portfolio updated successfully
+2025-10-16 21:54:59,030 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-16 21:54:59,031 - app - INFO - Data fetch completed successfully
+2025-10-16 21:54:59,031 - app - INFO - Completed fetch_latest_data in 1.09s
+2025-10-16 21:55:00,549 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 21:55:00,549 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 21:55:00,550 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 21:55:00,550 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 21:55:00,550 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:07:09,395 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:07:10,784 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:07:10,785 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:07:10,785 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:07:10,785 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:07:10,786 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:07:23,157 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:07:24,661 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:07:24,661 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:07:24,662 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:07:24,662 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:07:24,663 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:07:32,547 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:07:33,086 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 22:07:34,662 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:07:34,663 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:07:34,663 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:07:34,664 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:07:34,664 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:07:40,552 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:07:41,046 - stock_list_fetcher - ERROR - Error fetching S&P 500 stocks: HTTP Error 403: Forbidden
+2025-10-16 22:07:41,059 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:07:41,059 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:07:41,060 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:07:41,060 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:07:41,060 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:08:48,094 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:08:48,162 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:14:05,579 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:14:05,589 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:14:07,665 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:14:07,666 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:14:07,666 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:14:07,666 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:14:07,667 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:14:16,908 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:14:16,922 - app - INFO - Starting fetch_latest_data - 
+2025-10-16 22:14:16,923 - app - INFO - Starting async_complete_pipeline - 
+2025-10-16 22:14:16,924 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'GOOGL', 'AMZN', 'META']
+2025-10-16 22:14:16,924 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-16 22:14:16,924 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2025-10-16 22:14:16,924 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2025-10-16 22:14:17,913 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-16 22:14:17,914 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-16 22:14:17,914 - async_processor - INFO - Fetched stock data for AMZN
+2025-10-16 22:14:17,914 - async_processor - INFO - Fetched stock data for META
+2025-10-16 22:14:18,294 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-16 22:14:18,294 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-16 22:14:18,294 - async_processor - INFO - Fetched 10 articles for AMZN
+2025-10-16 22:14:18,294 - async_processor - INFO - Fetched 10 articles for META
+2025-10-16 22:14:18,294 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-16 22:14:18,294 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2025-10-16 22:14:18,306 - async_processor - INFO - Complete pipeline processed in 1.38 seconds
+2025-10-16 22:14:18,306 - async_processor - INFO - Completed complete_pipeline in 1.38s
+2025-10-16 22:14:18,320 - app - INFO - Async pipeline: fetched 40 articles total
+2025-10-16 22:14:18,320 - app - INFO - Completed async_complete_pipeline in 1.40s
+2025-10-16 22:14:18,321 - app - INFO - Starting generate_signals - 
+2025-10-16 22:14:18,321 - app - INFO - Generated 0 trading signals
+2025-10-16 22:14:18,321 - app - INFO - Completed generate_signals in 0.00s
+2025-10-16 22:14:18,322 - app - INFO - Starting update_portfolio - 
+2025-10-16 22:14:18,323 - app - INFO - Portfolio updated successfully
+2025-10-16 22:14:18,323 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-16 22:14:18,324 - app - INFO - Data fetch completed successfully
+2025-10-16 22:14:18,324 - app - INFO - Completed fetch_latest_data in 1.40s
+2025-10-16 22:14:20,306 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:14:20,306 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:14:20,306 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:14:20,306 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:14:20,306 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:17:36,941 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:17:37,186 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:17:37,187 - __main__ - ERROR - ❌ App functionality test failed: st.session_state has no attribute "signals". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization
+2025-10-16 22:17:37,188 - __main__ - ERROR - ❌ App Functionality Test failed
+2025-10-16 22:17:37,188 - __main__ - INFO - 
+🎉 Test Results: 3/5 tests passed
+2025-10-16 22:17:37,188 - __main__ - WARNING - ⚠️  Some tests failed. Check the logs above for details.
+2025-10-16 22:17:37,189 - __main__ - INFO - 
+🔧 Common fixes:
+2025-10-16 22:17:37,189 - __main__ - INFO - 1. Install missing packages: pip install -r requirements.txt
+2025-10-16 22:17:37,189 - __main__ - INFO - 2. Add API keys to .env file
+2025-10-16 22:17:37,189 - __main__ - INFO - 3. Check internet connection for data sources
+2025-10-16 22:21:34,534 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:21:34,542 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:21:35,994 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:21:35,994 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:21:35,994 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:21:35,994 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:21:35,995 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:21:53,838 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:21:55,481 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:21:55,481 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:21:55,481 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:21:55,481 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:21:55,482 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:24:30,191 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:24:31,783 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:24:31,784 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:24:31,784 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:24:31,784 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:24:31,785 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:27:02,778 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:27:02,780 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:27:08,317 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:27:08,327 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:27:11,039 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:27:11,040 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:27:11,040 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:27:11,040 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:27:11,040 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:27:12,098 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:27:13,449 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:27:13,450 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:27:13,450 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:27:13,450 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:27:13,451 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:27:39,681 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:27:39,683 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:28:09,974 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:28:09,977 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:34:00,657 - __main__ - INFO - ✅ Custom modules imported successfully
+2025-10-16 22:34:00,657 - __main__ - INFO - ✅ Custom Modules passed
+2025-10-16 22:34:00,657 - __main__ - INFO - 
+📋 Running New Features...
+2025-10-16 22:34:00,658 - __main__ - INFO - 🚀 Testing new features...
+2025-10-16 22:34:04,456 - advanced_sentiment_analyzer - INFO - Loading FinBERT model...
+2025-10-16 22:34:06,118 - advanced_sentiment_analyzer - ERROR - Error loading models: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2025-10-16 22:34:06,119 - advanced_sentiment_analyzer - INFO - Loading fallback models...
+2025-10-16 22:34:08,556 - advanced_sentiment_analyzer - ERROR - Error loading fallback models: Could not load model cardiffnlp/twitter-roberta-base-sentiment-latest with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForSequenceClassification'>, <class 'transformers.models.roberta.modeling_roberta.RobertaForSequenceClassification'>). See the original errors:
+
+while loading with AutoModelForSequenceClassification, an error is thrown:
+Traceback (most recent call last):
+  File "/Users/peaseadeniji/Builds/Quant/FinNewsTrader/advanced_sentiment_analyzer.py", line 58, in _initialize_models
+    self.models['finbert'] = AutoModelForSequenceClassification.from_pretrained(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 293, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 311, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **fp32_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+while loading with RobertaForSequenceClassification, an error is thrown:
+Traceback (most recent call last):
+  File "/Users/peaseadeniji/Builds/Quant/FinNewsTrader/advanced_sentiment_analyzer.py", line 58, in _initialize_models
+    self.models['finbert'] = AutoModelForSequenceClassification.from_pretrained(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 293, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 311, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **fp32_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/anaconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+
+
+2025-10-16 22:34:08,565 - __main__ - INFO - ✅ New features imported successfully
+2025-10-16 22:34:08,565 - __main__ - INFO - ✅ New Features passed
+2025-10-16 22:34:08,565 - __main__ - INFO - 
+📋 Running Data Sources...
+2025-10-16 22:34:08,565 - __main__ - INFO - 📊 Testing data sources...
+2025-10-16 22:34:10,149 - real_data_sources - ERROR - Alpha Vantage error: the parameter apikey is invalid or missing. Please claim your free API key on (https://www.alphavantage.co/support/#api-key). It should take less than 20 seconds.
+2025-10-16 22:35:26,266 - real_data_sources - ERROR - Error fetching IEX Cloud data for AAPL: HTTPSConnectionPool(host='cloud.iexapis.com', port=443): Max retries exceeded with url: /stable/stock/AAPL/chart/1d (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x153deae70>, 'Connection to cloud.iexapis.com timed out. (connect timeout=None)'))
+2025-10-16 22:35:26,268 - real_data_sources - ERROR - Failed to get stock data for AAPL from any source
+2025-10-16 22:35:26,269 - __main__ - WARNING - ⚠️  No stock data (API key needed)
+2025-10-16 22:35:26,806 - real_data_sources - ERROR - Alpha Vantage news error: the parameter apikey is invalid or missing. Please claim your free API key on (https://www.alphavantage.co/support/#api-key). It should take less than 20 seconds.
+2025-10-16 22:36:11,092 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:36:11,102 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:36:12,526 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:36:12,526 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:36:12,527 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:36:12,527 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:36:12,527 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:36:41,812 - real_data_sources - ERROR - Error fetching IEX Cloud news for AAPL: HTTPSConnectionPool(host='cloud.iexapis.com', port=443): Max retries exceeded with url: /stable/stock/AAPL/news/last/3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x153deb710>, 'Connection to cloud.iexapis.com timed out. (connect timeout=None)'))
+2025-10-16 22:36:42,575 - real_data_sources - ERROR - Error fetching NewsAPI data for AAPL: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=%22AAPL%22+OR+%22Apple%22&pageSize=3&sortBy=publishedAt&language=en&domains=bloomberg.com%2Creuters.com%2Ccnbc.com%2Cmarketwatch.com%2Cwsj.com
+2025-10-16 22:36:42,576 - __main__ - WARNING - ⚠️  No news data (API key needed)
+2025-10-16 22:36:42,576 - __main__ - INFO - ✅ Data Sources passed
+2025-10-16 22:36:42,576 - __main__ - INFO - 
+📋 Running Sentiment Analysis...
+2025-10-16 22:36:42,576 - __main__ - INFO - 🧠 Testing sentiment analysis...
+2025-10-16 22:36:42,576 - advanced_sentiment_analyzer - ERROR - Error in FinBERT analysis: FinBERT model not available
+2025-10-16 22:36:42,577 - advanced_sentiment_analyzer - WARNING - Error with finbert: FinBERT model not available
+2025-10-16 22:36:42,577 - advanced_sentiment_analyzer - ERROR - Error in RoBERTa analysis: RoBERTa model not available
+2025-10-16 22:36:42,577 - advanced_sentiment_analyzer - WARNING - Error with roberta: RoBERTa model not available
+2025-10-16 22:36:42,577 - advanced_sentiment_analyzer - ERROR - Error in BERT analysis: BERT model not available
+2025-10-16 22:36:42,577 - advanced_sentiment_analyzer - WARNING - Error with bert: BERT model not available
+2025-10-16 22:36:42,577 - __main__ - ERROR - ❌ Sentiment analysis test failed: No models available for analysis
+2025-10-16 22:36:42,577 - __main__ - ERROR - ❌ Sentiment Analysis failed
+2025-10-16 22:36:42,577 - __main__ - INFO - 
+📋 Running Trading Engine...
+2025-10-16 22:36:42,578 - __main__ - INFO - 💰 Testing trading engine...
+2025-10-16 22:36:42,578 - __main__ - INFO - ✅ Trading engine: {'cash': 100000.0, 'total_value': 0.0, 'total_pnl': 0.0, 'positions_count': 0, 'orders_count': 0, 'updated_at': datetime.datetime(2025, 10, 16, 22, 36, 42, 578369)}
+2025-10-16 22:36:42,578 - __main__ - INFO - ✅ Trading Engine passed
+2025-10-16 22:36:42,578 - __main__ - INFO - 
+📋 Running App Startup...
+2025-10-16 22:36:42,578 - __main__ - INFO - 🚀 Testing app startup...
+2025-10-16 22:36:43,302 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:36:43,306 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:36:43,307 - __main__ - ERROR - ❌ App startup test failed: st.session_state has no attribute "signals". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization
+2025-10-16 22:36:43,308 - __main__ - ERROR - ❌ App Startup failed
+2025-10-16 22:36:43,308 - __main__ - INFO - 
+🎉 Test Results: 5/7 tests passed
+2025-10-16 22:36:43,308 - __main__ - WARNING - ⚠️  Some tests failed. Check logs above.
+2025-10-16 22:36:43,308 - __main__ - INFO - 
+🔧 Common fixes:
+2025-10-16 22:36:43,308 - __main__ - INFO - 1. Install packages: pip install -r requirements.txt
+2025-10-16 22:36:43,308 - __main__ - INFO - 2. Add API keys to .env file
+2025-10-16 22:36:43,308 - __main__ - INFO - 3. Check internet connection
+2025-10-16 22:36:53,754 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:36:53,756 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:37:15,210 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:37:15,219 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:37:16,745 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:37:16,745 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:37:16,745 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:37:16,746 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:37:16,746 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:37:48,212 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:37:48,214 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:38:45,058 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:38:45,062 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:38:50,072 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:38:50,080 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:38:51,494 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:38:51,495 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:38:51,495 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:38:51,495 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:38:51,496 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:40:16,643 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:40:16,651 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:40:19,188 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:40:20,750 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:40:20,750 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:40:20,751 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:40:20,751 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:40:20,752 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:40:33,870 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:40:33,880 - app - INFO - Starting fetch_latest_data - 
+2025-10-16 22:40:33,882 - app - INFO - Starting async_complete_pipeline - 
+2025-10-16 22:40:33,883 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'GOOGL', 'AMZN', 'META']
+2025-10-16 22:40:33,884 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2025-10-16 22:40:33,884 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2025-10-16 22:40:33,884 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2025-10-16 22:40:34,641 - async_processor - INFO - Fetched stock data for AAPL
+2025-10-16 22:40:34,641 - async_processor - INFO - Fetched stock data for GOOGL
+2025-10-16 22:40:34,641 - async_processor - INFO - Fetched stock data for AMZN
+2025-10-16 22:40:34,642 - async_processor - INFO - Fetched stock data for META
+2025-10-16 22:40:34,832 - async_processor - INFO - Fetched 10 articles for AAPL
+2025-10-16 22:40:34,832 - async_processor - INFO - Fetched 10 articles for GOOGL
+2025-10-16 22:40:34,833 - async_processor - INFO - Fetched 10 articles for AMZN
+2025-10-16 22:40:34,833 - async_processor - INFO - Fetched 10 articles for META
+2025-10-16 22:40:34,833 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2025-10-16 22:40:34,833 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2025-10-16 22:40:34,843 - async_processor - INFO - Complete pipeline processed in 0.96 seconds
+2025-10-16 22:40:34,843 - async_processor - INFO - Completed complete_pipeline in 0.96s
+2025-10-16 22:40:34,860 - app - INFO - Async pipeline: fetched 40 articles total
+2025-10-16 22:40:34,860 - app - INFO - Completed async_complete_pipeline in 0.98s
+2025-10-16 22:40:34,861 - app - INFO - Starting generate_signals - 
+2025-10-16 22:40:34,862 - app - INFO - Generated 0 trading signals
+2025-10-16 22:40:34,862 - app - INFO - Completed generate_signals in 0.00s
+2025-10-16 22:40:34,864 - app - INFO - Starting update_portfolio - 
+2025-10-16 22:40:34,864 - app - INFO - Portfolio updated successfully
+2025-10-16 22:40:34,864 - app - INFO - Completed update_portfolio in 0.00s
+2025-10-16 22:40:34,865 - app - INFO - Data fetch completed successfully
+2025-10-16 22:40:34,865 - app - INFO - Completed fetch_latest_data in 0.99s
+2025-10-16 22:40:37,267 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:40:37,268 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:40:37,268 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:40:37,268 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:40:37,269 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:44:44,716 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:44:44,729 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:44:46,121 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:44:46,123 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:44:46,123 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:44:46,124 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:44:46,125 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:45:22,854 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:45:23,928 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:45:25,379 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:45:25,379 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:45:25,380 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:45:25,380 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:45:25,381 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:45:25,538 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:45:26,241 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:45:26,242 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:45:26,242 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:45:26,242 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:45:26,243 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:45:29,673 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:45:30,941 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:45:30,942 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:45:30,942 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:45:30,942 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:45:30,943 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:45:43,454 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:45:45,045 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:45:45,045 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:45:45,046 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:45:45,046 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:45:45,047 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:46:00,881 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:46:00,883 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:46:01,653 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:46:03,109 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:46:03,109 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:46:03,109 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:46:03,109 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:46:03,110 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:50:07,624 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:50:07,629 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:50:09,017 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:50:09,018 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:50:09,069 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:50:09,070 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:50:09,070 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:50:09,071 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:50:09,072 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:50:51,469 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:50:52,831 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:50:52,832 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:50:52,832 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:50:52,833 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:50:52,834 - alert_system - INFO - Added alert rule: high_impact_news

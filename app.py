@@ -6,6 +6,7 @@ import yfinance as yf
 from datetime import datetime, timedelta
 import time
 import os
+import sys
 
 # Configuration and logging
 from config import get_config
@@ -27,6 +28,7 @@ from data_visualizer import plot_sentiment_over_time, plot_portfolio_performance
 from backtester import run_backtest
 from utils import format_currency, get_stock_data, load_data, save_data
 from big_mover_dashboard import run_big_mover_dashboard
+from stock_list_fetcher import get_available_stocks, search_stocks, get_popular_stock_lists
 
 # Initialize configuration and logging
 config = get_config()
@@ -36,12 +38,307 @@ logger = get_app_logger()
 st.set_page_config(
     page_title="FinNews Trader",
     page_icon="📊",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+
+# Custom CSS for refined blue/black/white UI
+st.markdown("""
+<style>
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    /* Global Styles */
+    .main {
+        padding-top: 1rem;
+    }
+    
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+    }
+    
+    /* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.3);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(59, 130, 246, 0.5);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(59, 130, 246, 0.7);
+    }
+    
+    /* Refined Cards */
+    .metric-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 1rem 0;
+        box-shadow: 0 8px 32px rgba(15, 23, 42, 0.2);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .metric-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6, #1d4ed8, #1e40af);
+    }
+    
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(15, 23, 42, 0.3);
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    .metric-card h3 {
+        color: #0f172a;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 1rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .metric-card .value {
+        color: #0f172a;
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .metric-card .delta {
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin: 0.5rem 0 0 0;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        display: inline-block;
+    }
+    
+    .metric-card .delta.positive {
+        color: #059669;
+        background: rgba(5, 150, 105, 0.1);
+    }
+    
+    .metric-card .delta.negative {
+        color: #dc2626;
+        background: rgba(220, 38, 38, 0.1);
+    }
+    
+    /* Refined Sidebar */
+    .css-1d391kg {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        margin: 1rem;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Refined Buttons */
+    .stButton > button {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #1e3a8a 100%);
+    }
+    
+    /* Refined Form Elements */
+    .stSelectbox > div > div,
+    .stMultiSelect > div > div,
+    .stTextInput > div > div > input {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        color: #0f172a;
+        font-weight: 500;
+    }
+    
+    .stSelectbox > div > div:hover,
+    .stMultiSelect > div > div:hover,
+    .stTextInput > div > div > input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        background: rgba(255, 255, 255, 1);
+    }
+    
+    /* Refined Slider */
+    .stSlider > div > div > div {
+        background: linear-gradient(90deg, #3b82f6, #1d4ed8, #1e40af);
+        border-radius: 6px;
+    }
+    
+    /* Refined Messages */
+    .stInfo, .stSuccess, .stWarning, .stError {
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border-left: 4px solid;
+    }
+    
+    .stInfo {
+        background: rgba(59, 130, 246, 0.1);
+        border-left-color: #3b82f6;
+        color: #1e40af;
+    }
+    
+    .stSuccess {
+        background: rgba(5, 150, 105, 0.1);
+        border-left-color: #059669;
+        color: #047857;
+    }
+    
+    .stWarning {
+        background: rgba(245, 158, 11, 0.1);
+        border-left-color: #f59e0b;
+        color: #d97706;
+    }
+    
+    .stError {
+        background: rgba(220, 38, 38, 0.1);
+        border-left-color: #dc2626;
+        color: #b91c1c;
+    }
+    
+    /* Refined Tab Styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 6px;
+        background: rgba(15, 23, 42, 0.1);
+        padding: 6px;
+        border-radius: 12px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+    }
+    
+    .stTabs [data-baseweb="tab"]:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* Refined Header */
+    .main-header {
+        text-align: center;
+        padding: 3rem 0;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+        border-radius: 24px;
+        margin-bottom: 2rem;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .main-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(29, 78, 216, 0.1) 100%);
+        pointer-events: none;
+    }
+    
+    .main-header h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin: 0;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .main-header p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.3rem;
+        margin: 1rem 0 0 0;
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Data Tables */
+    .dataframe {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Section Headers */
+    .stHeader {
+        color: #0f172a;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #3b82f6;
+        display: inline-block;
+    }
+    
+    /* Subsection Headers */
+    .stSubheader {
+        color: #1e293b;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem 0;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 logger.info("Starting FinNews Trader application")
 
-# Initialize session state with configuration defaults
+def initialize_session_state():
+    """Initialize session state with configuration defaults"""
 if 'portfolio' not in st.session_state:
     st.session_state.portfolio = {
         'cash': config.backtest.initial_capital,
@@ -62,18 +359,86 @@ if 'last_update' not in st.session_state:
 if 'config' not in st.session_state:
     st.session_state.config = config
 
-# Main app header
-st.title("📊 FinNews Trader")
-st.subheader("Algorithmic Trading System Based on Financial News Analysis")
+# Check if running in Streamlit context
+if __name__ == "__main__" or "streamlit" in sys.modules:
+    # Initialize session state
+    initialize_session_state()
+    
+    # Main app header with refined styling
+    st.markdown("""
+    <div class="main-header">
+        <h1>📊 FinNews Trader</h1>
+        <p>Professional Algorithmic Trading Platform with Advanced News Intelligence</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Sidebar configuration
 st.sidebar.header("Configuration")
 
+# Stock selection section
+st.sidebar.subheader("Stock Selection")
+
+# Stock source selection
+stock_source = st.sidebar.selectbox(
+    "Stock List Source",
+    ["Popular Lists", "S&P 500", "NASDAQ", "NYSE", "All Stocks", "Search"],
+    index=0
+)
+
+# Get available stocks based on source
+try:
+    if stock_source == "Popular Lists":
+        popular_lists = get_popular_stock_lists()
+        selected_list = st.sidebar.selectbox(
+            "Choose a popular list",
+            list(popular_lists.keys()),
+            index=0
+        )
+        available_stocks = popular_lists[selected_list]
+    elif stock_source == "S&P 500":
+        available_stocks = get_available_stocks("sp500")
+    elif stock_source == "NASDAQ":
+        available_stocks = get_available_stocks("nasdaq")
+    elif stock_source == "NYSE":
+        available_stocks = get_available_stocks("nyse")
+    elif stock_source == "All Stocks":
+        available_stocks = get_available_stocks("all")
+    else:  # Search
+        search_query = st.sidebar.text_input("Search for stocks", placeholder="e.g., AAPL, Apple, Tesla")
+        if search_query:
+            available_stocks = search_stocks(search_query)
+        else:
+            available_stocks = config.ui.available_stocks
+    
+    # Fallback to config stocks if no stocks are available
+    if not available_stocks:
+        available_stocks = config.ui.available_stocks or ["AAPL", "MSFT", "GOOGL", "AMZN", "META"]
+        
+except Exception as e:
+    logger.error(f"Error fetching stocks: {str(e)}")
+    # Fallback to config stocks
+    available_stocks = config.ui.available_stocks or ["AAPL", "MSFT", "GOOGL", "AMZN", "META"]
+
+# Limit the number of stocks shown for performance
+if len(available_stocks) > 200:
+    available_stocks = available_stocks[:200]
+    st.sidebar.info(f"Showing first 200 stocks. Total available: {len(get_available_stocks('all'))}")
+
 # Select stocks to track
+# Ensure default stocks are in the available options
+default_stocks = []
+if config.ui.default_stocks:
+    # Filter default stocks to only include those in available_stocks
+    default_stocks = [stock for stock in config.ui.default_stocks if stock in available_stocks]
+    
+# If no valid defaults, use first few available stocks
+if not default_stocks and available_stocks:
+    default_stocks = available_stocks[:5]
+
 tracked_stocks = st.sidebar.multiselect(
     "Select stocks to track",
-    options=config.ui.available_stocks,
-    default=config.ui.default_stocks
+    options=available_stocks,
+    default=default_stocks
 )
 
 # Strategy parameters
@@ -290,34 +655,68 @@ with tab1:
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        portfolio_value = st.session_state.portfolio['cash']
-        for ticker, position in st.session_state.portfolio['positions'].items():
-            try:
-                current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
-                portfolio_value += position['shares'] * current_price
-            except:
-                st.warning(f"Could not fetch current price for {ticker}")
+        try:
+                portfolio_value = st.session_state.portfolio['cash']
+                for ticker, position in st.session_state.portfolio['positions'].items():
+                        try:
+                            current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
+                            portfolio_value += position['shares'] * current_price
+                        except:
+                            st.warning(f"Could not fetch current price for {ticker}")
+        except (KeyError, AttributeError):
+            portfolio_value = 100000.0
         
-        st.metric(
-            "Portfolio Value", 
-            format_currency(portfolio_value), 
-            delta=format_currency(portfolio_value - 100000)
-        )
+        delta = portfolio_value - 100000
+        delta_class = "positive" if delta >= 0 else "negative"
+        
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>💰 Portfolio Value</h3>
+            <div class="value">{format_currency(portfolio_value)}</div>
+            <div class="delta {delta_class}">
+                {format_currency(delta)} ({delta/1000:.1f}%)
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col2:
-        signal_count = len(st.session_state.signals)
-        buy_signals = sum(1 for s in st.session_state.signals if s['action'] == 'BUY')
-        sell_signals = sum(1 for s in st.session_state.signals if s['action'] == 'SELL')
+        try:
+            signal_count = len(st.session_state.signals)
+            buy_signals = sum(1 for s in st.session_state.signals if s['action'] == 'BUY')
+            sell_signals = sum(1 for s in st.session_state.signals if s['action'] == 'SELL')
+        except (KeyError, AttributeError):
+            signal_count = 0
+            buy_signals = 0
+            sell_signals = 0
         
-        st.metric("Active Signals", f"{signal_count}", f"{buy_signals} Buy, {sell_signals} Sell")
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>📊 Trading Signals</h3>
+            <div class="value">{signal_count}</div>
+            <div class="delta">
+                🟢 {buy_signals} Buy | 🔴 {sell_signals} Sell
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col3:
-        if st.session_state.last_update:
-            last_update = st.session_state.last_update.strftime("%Y-%m-%d %H:%M:%S")
-        else:
+        try:
+            if st.session_state.last_update:
+                last_update = st.session_state.last_update.strftime("%Y-%m-%d %H:%M:%S")
+            else:
+                last_update = "Never"
+        except (KeyError, AttributeError):
             last_update = "Never"
         
-        st.metric("Last Data Update", last_update)
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>🔄 Last Update</h3>
+            <div class="value">{last_update}</div>
+            <div class="delta">
+                Data freshness
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Performance Chart
     st.subheader("Portfolio Performance")
@@ -341,7 +740,7 @@ with tab1:
 
 with tab2:
     # News Analysis
-    st.header("Financial News Analysis")
+    st.header("📰 Financial News Analysis")
     
     # Sentiment Overview
     st.subheader("News Sentiment Overview")
@@ -399,7 +798,7 @@ with tab2:
 
 with tab3:
     # Trading Signals
-    st.header("Trading Signals")
+    st.header("📊 Trading Signals")
     
     if use_backtest:
         st.subheader("Backtest Results")
@@ -472,13 +871,18 @@ with tab3:
 
 with tab4:
     # Portfolio Tracker
-    st.header("Portfolio Tracker")
+    st.header("💼 Portfolio Tracker")
     
     # Portfolio Summary
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.metric("Cash Balance", format_currency(st.session_state.portfolio['cash']))
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>💰 Cash Balance</h3>
+            <div class="value">{format_currency(st.session_state.portfolio['cash'])}</div>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col2:
         positions_value = 0
@@ -489,10 +893,21 @@ with tab4:
             except:
                 st.warning(f"Could not fetch current price for {ticker}")
         
-        st.metric("Positions Value", format_currency(positions_value))
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>📈 Positions Value</h3>
+            <div class="value">{format_currency(positions_value)}</div>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col3:
-        st.metric("Total Value", format_currency(st.session_state.portfolio['cash'] + positions_value))
+        total_value = st.session_state.portfolio['cash'] + positions_value
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>💎 Total Value</h3>
+            <div class="value">{format_currency(total_value)}</div>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Current Positions
     st.subheader("Current Positions")
@@ -551,5 +966,13 @@ with tab5:
     run_big_mover_dashboard()
 
 # Footer
-st.markdown("---")
-st.caption("FinNews Trader - Algorithmic Trading System Based on Financial News Analysis")
+st.markdown("""
+<div style="text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid rgba(59, 130, 246, 0.2);">
+    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0; font-weight: 300;">
+        FinNews Trader - Professional Algorithmic Trading Platform
+    </p>
+    <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem; margin: 0.5rem 0 0 0; font-weight: 300;">
+        Powered by Advanced News Intelligence & Real-Time Market Analysis
+    </p>
+</div>
+""", unsafe_allow_html=True)
