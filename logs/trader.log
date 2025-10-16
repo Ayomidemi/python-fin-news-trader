@@ -843,3 +843,457 @@ See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-3243
 2025-10-16 22:50:52,832 - alert_system - INFO - Added alert rule: gap_up
 2025-10-16 22:50:52,833 - alert_system - INFO - Added alert rule: breakout
 2025-10-16 22:50:52,834 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:59:00,749 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:00,752 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:59:30,316 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:30,325 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 22:59:32,755 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:59:32,756 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:59:32,757 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:59:32,757 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:59:32,757 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:59:35,086 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:36,225 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:59:36,226 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:59:36,227 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:59:36,227 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:59:36,228 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:59:37,085 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:38,037 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:59:38,037 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:59:38,037 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:59:38,037 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:59:38,038 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:59:38,389 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:38,420 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 22:59:38,420 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 22:59:38,421 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 22:59:38,421 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 22:59:38,422 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 22:59:51,339 - app - INFO - Starting FinNews Trader application
+2025-10-16 22:59:51,855 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 22:59:51,856 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 22:59:51,857 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 22:59:52,461 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 22:59:52,462 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 22:59:52,462 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:00:15,613 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:00:44,145 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:00:53,810 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:00:54,710 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:01:14,891 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:01:14,891 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:01:15,987 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:01:15,987 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:01:15,988 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:01:15,988 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:01:15,989 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:01:29,731 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:30,245 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:30,246 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:30,247 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:30,806 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:30,807 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:30,807 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:32,483 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:32,975 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:32,976 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:32,978 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:33,180 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:33,469 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:33,470 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:33,470 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:33,663 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:33,663 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:33,664 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:34,136 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:34,136 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:34,137 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:35,784 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:36,281 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:36,282 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:36,284 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:36,744 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:36,744 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:36,745 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:37,368 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:37,867 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:37,867 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:37,869 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:38,370 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:38,370 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:38,371 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:38,837 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:39,309 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:39,309 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:39,310 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:39,774 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:39,775 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:39,775 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:43,877 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:01:44,348 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:44,348 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:44,349 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:44,894 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:01:44,894 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:01:44,895 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:01:52,667 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:01:52,671 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:01:52,754 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:01:53,769 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:01:54,891 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:01:58,312 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:02:00,147 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:02:16,512 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,524 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,526 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,612 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,621 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,729 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:16,942 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:02:25,689 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,692 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,693 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,695 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,705 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,799 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:25,937 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:02:26,507 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,548 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,643 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,668 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,671 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,694 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:26,759 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:02:45,979 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:45,980 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:46,195 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:46,196 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:46,197 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:46,197 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:46,595 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:46,595 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:49,139 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:49,140 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:54,382 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:54,382 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:55,517 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:02:55,517 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:02:55,900 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:02:55,901 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:02:55,901 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:02:55,902 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:02:55,903 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:04:01,586 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:04:01,811 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:04:02,060 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:04:02,060 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:04:02,061 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:04:02,283 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:04:02,284 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:04:02,285 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:04:02,545 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:04:02,546 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:04:02,546 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:04:02,803 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:04:02,803 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:04:02,804 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:04:24,948 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:04:25,020 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:04:49,913 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:04:50,063 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:04:59,248 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:04:59,251 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:05:00,203 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:05:00,204 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:05:20,941 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:05:20,942 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:05:22,196 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:05:22,196 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:05:22,213 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 23:05:22,754 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:05:22,755 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:05:22,755 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:05:22,756 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:05:22,756 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:05:22,953 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:05:23,582 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:05:23,582 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:05:23,582 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:05:24,084 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:05:24,084 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:05:24,086 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:05:46,385 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:06:11,191 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:06:20,941 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:06:21,804 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:06:43,079 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:06:43,080 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:06:43,525 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:06:43,526 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:06:43,526 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:06:43,526 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:06:43,527 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:07:02,440 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:07:02,959 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:07:02,960 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:07:02,960 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:07:03,441 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:07:03,442 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:07:03,443 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:07:26,006 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:07:50,598 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:08:00,305 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:08:01,176 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:08:24,749 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:08:24,750 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:08:25,193 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:08:25,193 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:08:25,194 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:08:25,195 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:08:25,195 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:08:25,207 - big_mover_tracker - INFO - Added AMZN to big mover monitoring
+2025-10-16 23:14:54,899 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:14:54,901 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 23:15:07,100 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:07,115 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 23:15:08,482 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:08,483 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:08,483 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:08,483 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:08,483 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:15:36,695 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:38,238 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:38,239 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:38,239 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:38,239 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:38,239 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:15:42,363 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:43,704 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:43,705 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:43,706 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:43,706 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:43,706 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:15:43,934 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:45,308 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:45,309 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:45,309 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:45,310 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:45,310 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:15:45,481 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:46,190 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:46,190 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:46,190 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:46,190 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:46,191 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:15:52,812 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:15:54,421 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:15:54,422 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:15:54,422 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:15:54,423 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:15:54,423 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:16:01,901 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:16:03,331 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:16:03,332 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:16:03,333 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:16:03,333 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:16:03,334 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:16:03,341 - big_mover_tracker - INFO - Added AMZN to big mover monitoring
+2025-10-16 23:16:09,197 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:16:10,665 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:16:10,666 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:16:10,667 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:16:10,668 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:16:10,669 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:16:10,682 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 23:16:11,845 - yfinance - ERROR - $AMZN: possibly delisted; no price data found  (1m 2025-10-16 22:16:10.682750 -> 2025-10-16 23:16:10.682750) (Yahoo error = "Data doesn't exist for startDate = 1760667370, endDate = 1760670970")
+2025-10-16 23:16:15,426 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:16:17,048 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:16:17,049 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:16:17,050 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:16:17,051 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:16:17,051 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:16:17,062 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 23:16:17,751 - yfinance - ERROR - $AMZN: possibly delisted; no price data found  (1m 2025-10-16 22:16:17.062561 -> 2025-10-16 23:16:17.062561) (Yahoo error = "Data doesn't exist for startDate = 1760667377, endDate = 1760670977")
+2025-10-16 23:16:26,519 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:16:27,875 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:16:27,876 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:16:27,877 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:16:27,877 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:16:27,878 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:17:28,434 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:17:30,140 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:17:30,140 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:17:30,141 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:17:30,141 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:17:30,141 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:18:40,683 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:18:40,683 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:18:40,683 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:18:40,684 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:18:40,684 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:18:58,334 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:18:58,339 - cache - INFO - Cache manager initialized with MemoryCache backend
+2025-10-16 23:18:59,854 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:18:59,855 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:18:59,855 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:18:59,856 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:18:59,856 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:22,290 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:22,411 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:24,028 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:24,028 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:24,028 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:24,028 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:24,029 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:24,197 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:24,895 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:24,895 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:24,896 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:24,896 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:24,896 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:30,240 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:31,521 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:31,521 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:31,521 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:31,522 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:31,522 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:31,534 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 23:19:32,723 - yfinance - ERROR - $AMZN: possibly delisted; no price data found  (1m 2025-10-16 22:19:31.535363 -> 2025-10-16 23:19:31.535363) (Yahoo error = "Data doesn't exist for startDate = 1760667571, endDate = 1760671171")
+2025-10-16 23:19:36,053 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:37,454 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:37,454 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:37,454 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:37,455 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:37,455 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:37,762 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:39,215 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:39,216 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:39,216 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:39,242 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:39,262 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:19:39,274 - big_mover_tracker - INFO - Scanning 1 tickers for big movers
+2025-10-16 23:19:39,869 - yfinance - ERROR - $AMZN: possibly delisted; no price data found  (1m 2025-10-16 22:19:39.275118 -> 2025-10-16 23:19:39.275118) (Yahoo error = "Data doesn't exist for startDate = 1760667579, endDate = 1760671179")
+2025-10-16 23:19:46,510 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:19:48,017 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:19:48,018 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:19:48,018 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:19:48,018 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:19:48,019 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:20:17,639 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:20:19,216 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:20:19,217 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:20:19,217 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:20:19,218 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:20:19,218 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:20:48,082 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:20:48,134 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:20:48,134 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:20:48,134 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:20:48,135 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:20:48,135 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:21,410 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:21,531 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:21,532 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:21,533 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:21,533 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:21,534 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:27,566 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:27,576 - app - INFO - Starting fetch_latest_data - 
+2025-10-16 23:21:27,578 - app - ERROR - No valid stocks selected for data fetching
+2025-10-16 23:21:27,578 - app - INFO - Completed fetch_latest_data in 0.00s
+2025-10-16 23:21:27,624 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:27,625 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:27,625 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:27,626 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:27,626 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:33,803 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:33,860 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:33,861 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:33,861 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:33,862 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:33,862 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:34,054 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:34,117 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:34,118 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:34,118 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:34,119 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:34,120 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:38,800 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:38,879 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:38,880 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:38,880 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:38,880 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:38,881 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:42,057 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:42,104 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:42,105 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:42,106 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:42,106 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:42,107 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:21:57,379 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:21:57,455 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:21:57,456 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:21:57,457 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:21:57,457 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:21:57,458 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:22:05,651 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:05,723 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:22:05,725 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:22:05,725 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:22:05,726 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:22:05,726 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:22:11,865 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:11,937 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:22:11,937 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:22:11,937 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:22:11,938 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:22:11,939 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:22:28,898 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:31,127 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:31,190 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:22:31,191 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:22:31,191 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:22:31,192 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:22:31,192 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:22:35,470 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:37,183 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:22:37,184 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:22:37,184 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:22:37,185 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:22:37,185 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:22:51,309 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:22:56,804 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:22:56,812 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:22:56,813 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:22:56,813 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:22:56,814 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:23:16,519 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:23:21,042 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:23:21,043 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:23:21,043 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:23:21,043 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:23:21,044 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:23:21,815 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:23:23,360 - stock_list_fetcher - WARNING - Error fetching S&P 500 from Wikipedia: HTTP Error 403: Forbidden
+2025-10-16 23:23:23,360 - stock_list_fetcher - INFO - Using fallback S&P 500 list
+2025-10-16 23:23:23,361 - stock_list_fetcher - INFO - Using fallback S&P 500 list with 241 stocks
+2025-10-16 23:23:46,021 - stock_list_fetcher - INFO - Fetched 32 NASDAQ stocks
+2025-10-16 23:24:16,070 - stock_list_fetcher - INFO - Fetched 36 NYSE stocks
+2025-10-16 23:24:26,349 - stock_list_fetcher - WARNING - Error fetching info for EBANG: HTTP Error 404: 
+2025-10-16 23:24:27,275 - stock_list_fetcher - INFO - Fetched 15 crypto stocks
+2025-10-16 23:24:47,663 - stock_list_fetcher - INFO - Fetched 29 ETFs
+2025-10-16 23:24:47,664 - stock_list_fetcher - INFO - Cached 131 unique stocks
+2025-10-16 23:24:47,664 - stock_list_fetcher - INFO - Cached 131 symbols for symbols_all
+2025-10-16 23:24:52,570 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:24:52,571 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:24:52,571 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:24:52,571 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:24:52,571 - alert_system - INFO - Added alert rule: high_impact_news
+2025-10-16 23:25:29,149 - app - INFO - Starting FinNews Trader application
+2025-10-16 23:25:29,150 - stock_list_fetcher - INFO - Using cached symbols_all data
+2025-10-16 23:25:35,517 - alert_system - INFO - Added alert rule: price_spike
+2025-10-16 23:25:35,517 - alert_system - INFO - Added alert rule: volume_surge
+2025-10-16 23:25:35,518 - alert_system - INFO - Added alert rule: gap_up
+2025-10-16 23:25:35,519 - alert_system - INFO - Added alert rule: breakout
+2025-10-16 23:25:35,519 - alert_system - INFO - Added alert rule: high_impact_news

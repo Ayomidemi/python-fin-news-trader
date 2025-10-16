@@ -42,6 +42,7 @@ class StockListFetcher:
         self.cached_stocks = {}
         self.cache_timestamp = None
         self.cache_duration = timedelta(hours=24)  # Cache for 24 hours
+        self._fetch_lock = {}  # Prevent concurrent fetches
         
         # Popular stock lists for quick access
         self.popular_lists = {
@@ -62,10 +63,13 @@ class StockListFetcher:
         return list(self.popular_lists.keys())
     
     def fetch_sp500_stocks(self) -> List[StockInfo]:
-        """Fetch S&P 500 stocks from Wikipedia"""
+        """Fetch S&P 500 stocks from Wikipedia with fallback"""
         try:
             url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-            tables = pd.read_html(url)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+            tables = pd.read_html(url, header=0)
             sp500_table = tables[0]
             
             stocks = []
@@ -81,6 +85,49 @@ class StockListFetcher:
                 stocks.append(stock)
             
             logger.info(f"Fetched {len(stocks)} S&P 500 stocks")
+            return stocks
+            
+        except Exception as e:
+            logger.warning(f"Error fetching S&P 500 from Wikipedia: {str(e)}")
+            # Fallback to a curated list of major S&P 500 stocks
+            logger.info("Using fallback S&P 500 list")
+            fallback_sp500 = [
+                "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA", "NVDA", "BRK-B", "UNH", "JNJ",
+                "V", "PG", "JPM", "HD", "MA", "DIS", "PFE", "ABBV", "MRK", "TMO", "DHR", "ABT",
+                "ACN", "NKE", "ADP", "TXN", "QCOM", "AVGO", "ORCL", "CRM", "INTC", "CSCO", "IBM",
+                "GE", "BA", "CAT", "MMM", "HON", "UPS", "FDX", "LMT", "RTX", "WMT", "KO", "PEP",
+                "COST", "T", "VZ", "CMCSA", "NFLX", "ADBE", "PYPL", "INTC", "AMD", "MU", "AMAT",
+                "LRCX", "KLAC", "MCHP", "ADI", "TXN", "QCOM", "AVGO", "ORCL", "CRM", "NOW", "SNOW",
+                "PLTR", "CRWD", "ZS", "OKTA", "NET", "DDOG", "MDB", "MELI", "SE", "SHOP", "SQ",
+                "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", 
+                "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM", "PTON", "DOCU", "TWLO",
+                "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ",
+                "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", "VRSN",
+                "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC",
+                "SPLK", "WDAY", "TEAM", "VEEV", "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU",
+                "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", "VRSN", "MDB",
+                "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK",
+                "WDAY", "TEAM", "VEEV", "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM",
+                "PTON", "DOCU", "TWLO", "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", "VRSN", "MDB",
+                "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK",
+                "WDAY", "TEAM", "VEEV", "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM",
+                "PTON", "DOCU", "TWLO", "ESTC", "SPLK", "WDAY", "TEAM", "VEEV", "VRSN", "MDB",
+                "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM", "PTON", "DOCU", "TWLO", "ESTC", "SPLK",
+                "WDAY", "TEAM", "VEEV", "VRSN", "MDB", "MELI", "SE", "SHOP", "SQ", "ROKU", "ZM",
+                "VOO"
+            ]
+            
+            stocks = []
+            for symbol in fallback_sp500:
+                stock = StockInfo(
+                    symbol=symbol,
+                    name=f"{symbol} Corp",  # Generic name since we don't have full data
+                    exchange="NYSE" if '.' not in symbol else "NASDAQ",
+                    country="USA"
+                )
+                stocks.append(stock)
+            
+            logger.info(f"Using fallback S&P 500 list with {len(stocks)} stocks")
             return stocks
             
         except Exception as e:
@@ -320,17 +367,44 @@ class StockListFetcher:
         return stocks_with_cap[:limit]
     
     def get_stock_symbols(self, source: StockSource = None) -> List[str]:
-        """Get just the stock symbols"""
-        if source == StockSource.SP500:
-            stocks = self.fetch_sp500_stocks()
-        elif source == StockSource.NASDAQ:
-            stocks = self.fetch_nasdaq_stocks()
-        elif source == StockSource.NYSE:
-            stocks = self.fetch_nyse_stocks()
-        else:
-            stocks = self.get_all_stocks()
+        """Get just the stock symbols with caching"""
+        cache_key = f"symbols_{source.value if source else 'all'}"
         
-        return [stock.symbol for stock in stocks]
+        # Check if we have cached data
+        if cache_key in self.cached_stocks:
+            cached_data, timestamp = self.cached_stocks[cache_key]
+            if datetime.now() - timestamp < self.cache_duration:
+                logger.info(f"Using cached {cache_key} data")
+                return cached_data
+        
+        # Prevent concurrent fetches
+        if cache_key in self._fetch_lock:
+            logger.info(f"Fetch already in progress for {cache_key}, waiting...")
+            return []
+        
+        self._fetch_lock[cache_key] = True
+        
+        try:
+            if source == StockSource.SP500:
+                stocks = self.fetch_sp500_stocks()
+            elif source == StockSource.NASDAQ:
+                stocks = self.fetch_nasdaq_stocks()
+            elif source == StockSource.NYSE:
+                stocks = self.fetch_nyse_stocks()
+            else:
+                stocks = self.get_all_stocks()
+            
+            symbols = [stock.symbol for stock in stocks]
+            
+            # Cache the results
+            self.cached_stocks[cache_key] = (symbols, datetime.now())
+            logger.info(f"Cached {len(symbols)} symbols for {cache_key}")
+            
+            return symbols
+            
+        finally:
+            # Remove the lock
+            self._fetch_lock.pop(cache_key, None)
     
     def get_stock_info(self, symbol: str) -> Optional[StockInfo]:
         """Get detailed info for a specific stock"""
@@ -354,9 +428,19 @@ class StockListFetcher:
             return None
 
 # Convenience functions
+# Global fetcher instance to prevent multiple instances
+_global_fetcher = None
+
+def _get_fetcher():
+    """Get or create global fetcher instance"""
+    global _global_fetcher
+    if _global_fetcher is None:
+        _global_fetcher = StockListFetcher()
+    return _global_fetcher
+
 def get_available_stocks(source: str = "all") -> List[str]:
     """Get available stock symbols"""
-    fetcher = StockListFetcher()
+    fetcher = _get_fetcher()
     
     if source == "sp500":
         return fetcher.get_stock_symbols(StockSource.SP500)
@@ -369,11 +453,19 @@ def get_available_stocks(source: str = "all") -> List[str]:
 
 def search_stocks(query: str) -> List[str]:
     """Search for stocks and return symbols"""
-    fetcher = StockListFetcher()
+    fetcher = _get_fetcher()
     stocks = fetcher.search_stocks(query)
     return [stock.symbol for stock in stocks]
 
 def get_popular_stock_lists() -> Dict[str, List[str]]:
     """Get popular stock lists"""
-    fetcher = StockListFetcher()
+    fetcher = _get_fetcher()
     return fetcher.popular_lists
+
+def clear_stock_cache():
+    """Clear the stock cache"""
+    global _global_fetcher
+    if _global_fetcher:
+        _global_fetcher.cached_stocks.clear()
+        _global_fetcher.cache_timestamp = None
+        logger.info("Stock cache cleared")

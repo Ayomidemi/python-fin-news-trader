@@ -7,6 +7,10 @@ from datetime import datetime, timedelta
 import time
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configuration and logging
 from config import get_config
@@ -28,7 +32,7 @@ from data_visualizer import plot_sentiment_over_time, plot_portfolio_performance
 from backtester import run_backtest
 from utils import format_currency, get_stock_data, load_data, save_data
 from big_mover_dashboard import run_big_mover_dashboard
-from stock_list_fetcher import get_available_stocks, search_stocks, get_popular_stock_lists
+from stock_list_fetcher import get_available_stocks, search_stocks, get_popular_stock_lists, clear_stock_cache
 
 # Initialize configuration and logging
 config = get_config()
@@ -382,10 +386,11 @@ st.sidebar.subheader("Stock Selection")
 stock_source = st.sidebar.selectbox(
     "Stock List Source",
     ["Popular Lists", "S&P 500", "NASDAQ", "NYSE", "All Stocks", "Search"],
-    index=0
+    index=0,
+    help="Popular Lists work without API keys. S&P 500, NASDAQ, NYSE use real-time data when API keys are available."
 )
 
-# Get available stocks based on source
+# Get available stocks based on source (with caching)
 try:
     if stock_source == "Popular Lists":
         popular_lists = get_popular_stock_lists()
@@ -422,7 +427,13 @@ except Exception as e:
 # Limit the number of stocks shown for performance
 if len(available_stocks) > 200:
     available_stocks = available_stocks[:200]
-    st.sidebar.info(f"Showing first 200 stocks. Total available: {len(get_available_stocks('all'))}")
+    st.sidebar.info(f"Showing first 200 stocks. Total available: {len(available_stocks)}")
+
+# Show performance info
+if available_stocks:
+    st.sidebar.success(f"✅ Loaded {len(available_stocks)} stocks")
+else:
+    st.sidebar.warning("⚠️ No stocks loaded")
 
 # Select stocks to track
 # Ensure default stocks are in the available options
@@ -468,6 +479,24 @@ take_profit_pct = st.sidebar.slider(
     1
 ) / 100
 
+# API Status
+st.sidebar.subheader("API Status")
+api_keys = {
+    'Alpha Vantage': os.getenv('ALPHA_VANTAGE_API_KEY'),
+    'IEX Cloud': os.getenv('IEX_CLOUD_API_KEY'),
+    'News API': os.getenv('NEWS_API_KEY'),
+    'Polygon': os.getenv('POLYGON_API_KEY'),
+}
+
+for api, key in api_keys.items():
+    if key and key != f"your_{api.lower().replace(' ', '_')}_key_here":
+        st.sidebar.success(f"✅ {api}")
+    else:
+        st.sidebar.warning(f"❌ {api}")
+
+if not any(key and key != f"your_{api.lower().replace(' ', '_')}_key_here" for api, key in api_keys.items()):
+    st.sidebar.info("💡 Run `python setup_api_keys.py` to set up API keys")
+
 # Configuration display (if debug mode enabled)
 if config.ui.show_debug_info:
     st.sidebar.subheader("Debug Info")
@@ -482,10 +511,16 @@ if config.ui.show_debug_info:
         cache_stats = cache_manager.backend.get_stats()
         st.sidebar.text(f"Cache entries: {cache_stats.get('entries', 'N/A')}")
     
-    # Clear cache button
-    if st.sidebar.button("Clear Cache"):
-        cache_manager.clear()
-        st.sidebar.success("Cache cleared!")
+    # Clear cache buttons
+    col1, col2 = st.sidebar.columns(2)
+    with col1:
+        if st.button("Clear Data Cache"):
+            cache_manager.clear()
+            st.success("Data cache cleared!")
+    with col2:
+        if st.button("Clear Stock Cache"):
+            clear_stock_cache()
+            st.success("Stock cache cleared!")
 
 # Backtest settings
 use_backtest = st.sidebar.checkbox("Run Backtest")
@@ -656,13 +691,13 @@ with tab1:
     
     with col1:
         try:
-                portfolio_value = st.session_state.portfolio['cash']
-                for ticker, position in st.session_state.portfolio['positions'].items():
-                        try:
-                            current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
-                            portfolio_value += position['shares'] * current_price
-                        except:
-                            st.warning(f"Could not fetch current price for {ticker}")
+            portfolio_value = st.session_state.portfolio['cash']
+            for ticker, position in st.session_state.portfolio['positions'].items():
+                try:
+                    current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
+                    portfolio_value += position['shares'] * current_price
+                except:
+                    st.warning(f"Could not fetch current price for {ticker}")
         except (KeyError, AttributeError):
             portfolio_value = 100000.0
         
@@ -692,10 +727,10 @@ with tab1:
         st.markdown(f"""
         <div class="metric-card">
             <h3>📊 Trading Signals</h3>
-            <div class="value">{signal_count}</div>
-            <div class="delta">
-                🟢 {buy_signals} Buy | 🔴 {sell_signals} Sell
-            </div>
+        <div class="value">{signal_count}</div>
+        <div class="delta">
+            🟢 {buy_signals} Buy | 🔴 {sell_signals} Sell
+        </div>
         </div>
         """, unsafe_allow_html=True)
     

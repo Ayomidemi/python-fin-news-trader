@@ -6,6 +6,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
+import numpy as np
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
 import asyncio
@@ -579,12 +580,45 @@ class BigMoverDashboard:
                     if 'patterns' in data:
                         alerts.extend(data['patterns'])
                 
+                # If no real alerts, create some sample data for demonstration
+                if not alerts and st.session_state.monitored_tickers:
+                    alerts = self._generate_sample_volume_alerts()
+                    st.info("Using sample data for demonstration. Real volume analysis requires valid stock data.")
+                
                 st.session_state.volume_alerts.extend(alerts)
             
             st.success(f"Volume analysis complete! Found {len(alerts)} patterns.")
             
         except Exception as e:
             st.error(f"Error analyzing volume: {str(e)}")
+    
+    def _generate_sample_volume_alerts(self):
+        """Generate sample volume alerts for demonstration"""
+        from volume_analyzer import VolumeAlert, VolumePattern
+        import random
+        
+        sample_alerts = []
+        for ticker in st.session_state.monitored_tickers:
+            # Generate 2-5 sample alerts per ticker
+            num_alerts = random.randint(2, 5)
+            for _ in range(num_alerts):
+                volume_ratio = random.uniform(1.2, 4.0)  # Realistic volume ratios
+                alert = VolumeAlert(
+                    ticker=ticker,
+                    pattern_type=random.choice(list(VolumePattern)),
+                    current_volume=random.randint(1000000, 10000000),
+                    avg_volume=random.randint(500000, 5000000),
+                    volume_ratio=volume_ratio,
+                    volume_percentile=random.uniform(70, 99),
+                    timestamp=datetime.now(),
+                    confidence=random.uniform(0.6, 0.95),
+                    price_correlation=random.uniform(-0.8, 0.8),
+                    reason=f"Sample volume pattern detected: {volume_ratio:.1f}x average",
+                    technical_details={'sample': True}
+                )
+                sample_alerts.append(alert)
+        
+        return sample_alerts
     
     def _analyze_news_correlations(self):
         """Analyze news correlations for monitored tickers"""
@@ -621,19 +655,74 @@ class BigMoverDashboard:
     def _render_volume_distribution_chart(self):
         """Render volume distribution chart"""
         if not st.session_state.volume_alerts:
+            st.info("No volume alerts available. Add tickers to monitor and run analysis.")
+            
+            # Add button to generate sample data for testing
+            if st.button("Generate Sample Data for Testing"):
+                if st.session_state.monitored_tickers:
+                    sample_alerts = self._generate_sample_volume_alerts()
+                    st.session_state.volume_alerts.extend(sample_alerts)
+                    st.success(f"Generated {len(sample_alerts)} sample volume alerts!")
+                    st.rerun()
+                else:
+                    st.warning("Please add some tickers to monitor first.")
             return
         
-        # Create volume distribution chart
-        volume_ratios = [alert.volume_ratio for alert in st.session_state.volume_alerts]
-        
-        fig = px.histogram(
-            x=volume_ratios,
-            nbins=20,
-            title="Volume Ratio Distribution",
-            labels={'x': 'Volume Ratio', 'y': 'Count'}
-        )
-        
-        st.plotly_chart(fig, use_container_width=True)
+        try:
+            # Create volume distribution chart
+            volume_ratios = []
+            for alert in st.session_state.volume_alerts:
+                if hasattr(alert, 'volume_ratio') and alert.volume_ratio is not None:
+                    volume_ratios.append(alert.volume_ratio)
+            
+            if not volume_ratios:
+                st.warning("No valid volume ratio data available.")
+                return
+            
+            # Create histogram with better styling
+            fig = px.histogram(
+                x=volume_ratios,
+                nbins=20,
+                title="Volume Ratio Distribution",
+                labels={'x': 'Volume Ratio', 'y': 'Count'},
+                color_discrete_sequence=['#3b82f6']
+            )
+            
+            # Update layout for better appearance
+            fig.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font=dict(color='#0f172a'),
+                title_font_size=16,
+                title_x=0.5
+            )
+            
+            # Add mean line
+            mean_ratio = np.mean(volume_ratios)
+            fig.add_vline(
+                x=mean_ratio, 
+                line_dash="dash", 
+                line_color="red",
+                annotation_text=f"Mean: {mean_ratio:.2f}",
+                annotation_position="top"
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Show statistics
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.metric("Count", len(volume_ratios))
+            with col2:
+                st.metric("Mean", f"{np.mean(volume_ratios):.2f}")
+            with col3:
+                st.metric("Median", f"{np.median(volume_ratios):.2f}")
+            with col4:
+                st.metric("Max", f"{np.max(volume_ratios):.2f}")
+                
+        except Exception as e:
+            st.error(f"Error rendering volume distribution chart: {str(e)}")
+            logger.error(f"Error rendering volume distribution chart: {str(e)}")
     
     def _update_thresholds(self, price_threshold, volume_threshold, confidence_threshold):
         """Update detection thresholds"""
