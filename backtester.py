@@ -288,19 +288,16 @@ def run_backtest(tickers, start_date, end_date, sentiment_threshold=0.3, positio
     # Win rate
     trades = portfolio['trades']
     if trades:
-        winning_trades = [t for t in trades if t['Action'] == 'SELL' and t['P&L'] > 0]
-        losing_trades = [t for t in trades if t['Action'] == 'SELL' and t['P&L'] <= 0]
-        
-        win_rate = (len(winning_trades) / len([t for t in trades if t['Action'] == 'SELL'])) * 100 if trades else 0
-        
-        # Profit factor
+        sell_trades = [t for t in trades if t['Action'] == 'SELL']
+        winning_trades = [t for t in sell_trades if t['P&L'] > 0]
+        losing_trades = [t for t in sell_trades if t['P&L'] <= 0]
+        win_rate = (len(winning_trades) / len(sell_trades)) * 100 if sell_trades else 0.0
         gross_profit = sum(t['P&L'] for t in winning_trades)
         gross_loss = abs(sum(t['P&L'] for t in losing_trades))
-        
         profit_factor = gross_profit / gross_loss if gross_loss > 0 else float('inf')
     else:
-        win_rate = 0
-        profit_factor = 0
+        win_rate = 0.0
+        profit_factor = 0.0
     
     # Maximum drawdown
     equity_curve = np.array(portfolio['equity_curve'])

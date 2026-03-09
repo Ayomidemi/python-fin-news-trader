@@ -343,25 +343,21 @@ logger.info("Starting FinNews Trader application")
 
 def initialize_session_state():
     """Initialize session state with configuration defaults"""
-if 'portfolio' not in st.session_state:
-    st.session_state.portfolio = {
-        'cash': config.backtest.initial_capital,
-        'positions': {},
-        'history': [],
-        'performance': [],
-    }
-    
-if 'signals' not in st.session_state:
-    st.session_state.signals = []
-    
-if 'news_data' not in st.session_state:
-    st.session_state.news_data = []
-    
-if 'last_update' not in st.session_state:
-    st.session_state.last_update = None
-
-if 'config' not in st.session_state:
-    st.session_state.config = config
+    if 'portfolio' not in st.session_state:
+        st.session_state.portfolio = {
+            'cash': config.backtest.initial_capital,
+            'positions': {},
+            'history': [],
+            'performance': [],
+        }
+    if 'signals' not in st.session_state:
+        st.session_state.signals = []
+    if 'news_data' not in st.session_state:
+        st.session_state.news_data = []
+    if 'last_update' not in st.session_state:
+        st.session_state.last_update = None
+    if 'config' not in st.session_state:
+        st.session_state.config = config
 
 # Check if running in Streamlit context
 if __name__ == "__main__" or "streamlit" in sys.modules:
@@ -551,33 +547,28 @@ if st.sidebar.button("Fetch Latest Data"):
                 st.error("No valid stocks selected")
                 logger.error("No valid stocks selected for data fetching")
             else:
-                # Use async processing if enabled
-                if config.data_sources.use_async_processing:
+                # Use async processing if enabled (local variable so we don't mutate config)
+                use_async_this_run = config.data_sources.use_async_processing
+                news_data = []
+                stock_data = {}
+                if use_async_this_run:
                     try:
                         with st.spinner("Fetching data using parallel processing..."):
                             with LogContext(logger, "async_complete_pipeline"):
-                                # Use the complete async pipeline
                                 news_data_dict, stock_data = run_async_complete_pipeline(validated_stocks)
-                                
-                                # Convert news data dict to flat list for backward compatibility
                                 news_data = []
                                 for ticker, articles in news_data_dict.items():
                                     for article in articles:
                                         article['ticker'] = ticker
                                         news_data.append(article)
-                                
-                                # Sort by date
                                 news_data = sorted(news_data, key=lambda x: x['date'], reverse=True)
                                 logger.info(f"Async pipeline: fetched {len(news_data)} articles total")
-                                
                     except Exception as e:
                         st.error(f"Async processing failed: {str(e)}")
                         logger.error(f"Async processing failed, falling back to sync: {str(e)}")
-                        # Fall back to synchronous processing
-                        config.data_sources.use_async_processing = False
-                
+                        use_async_this_run = False
                 # Synchronous processing (fallback or if async disabled)
-                if not config.data_sources.use_async_processing:
+                if not use_async_this_run:
                     # Fetch news data with error handling
                     news_data = []
                     progress_bar = st.progress(0)
@@ -696,7 +687,8 @@ with tab1:
                 try:
                     current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
                     portfolio_value += position['shares'] * current_price
-                except:
+                except Exception as e:
+                    logger.warning(f"Could not fetch current price for {ticker}: {e}")
                     st.warning(f"Could not fetch current price for {ticker}")
         except (KeyError, AttributeError):
             portfolio_value = 100000.0
@@ -925,7 +917,8 @@ with tab4:
             try:
                 current_price = yf.Ticker(ticker).history(period="1d")['Close'].iloc[-1]
                 positions_value += position['shares'] * current_price
-            except:
+            except Exception as e:
+                logger.warning(f"Could not fetch current price for {ticker}: {e}")
                 st.warning(f"Could not fetch current price for {ticker}")
         
         st.markdown(f"""
@@ -964,7 +957,8 @@ with tab4:
                     'Unrealized P&L': unrealized_pl,
                     'Return %': unrealized_pl_pct
                 })
-            except:
+            except Exception as e:
+                logger.warning(f"Could not fetch current price for {ticker}: {e}")
                 st.warning(f"Could not fetch current price for {ticker}")
         
         positions_df = pd.DataFrame(positions_data)

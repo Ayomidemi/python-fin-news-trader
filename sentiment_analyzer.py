@@ -19,8 +19,8 @@ except LookupError:
 # Load spaCy model
 try:
     nlp = spacy.load("en_core_web_sm")
-except:
-    # If model not found, we'll need to download it
+except OSError:
+    # Model not found — download it
     import subprocess
     import sys
     subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
