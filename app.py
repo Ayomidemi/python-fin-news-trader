@@ -33,6 +33,7 @@ from backtester import run_backtest
 from utils import format_currency, get_stock_data, load_data, save_data
 from big_mover_dashboard import run_big_mover_dashboard
 from stock_list_fetcher import get_available_stocks, search_stocks, get_popular_stock_lists, clear_stock_cache
+from edge_screener import run_full_scan
 
 # Initialize configuration and logging
 config = get_config()
@@ -358,6 +359,8 @@ def initialize_session_state():
         st.session_state.last_update = None
     if 'config' not in st.session_state:
         st.session_state.config = config
+    if 'edge_scan' not in st.session_state:
+        st.session_state.edge_scan = None  # {unusual_volume, top_performers, watchlist, tickers_scanned}
 
 # Check if running in Streamlit context
 if __name__ == "__main__" or "streamlit" in sys.modules:
@@ -672,7 +675,14 @@ if st.sidebar.button("Fetch Latest Data"):
                 logger.info("Data fetch completed successfully")
 
 # Main content area - use tabs
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Dashboard", "News Analysis", "Trading Signals", "Portfolio", "Big Mover Tracker"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    "Dashboard",
+    "🚀 Edge / Watchlist",
+    "News Analysis",
+    "Trading Signals",
+    "Portfolio",
+    "Big Mover Tracker",
+])
 
 with tab1:
     # Dashboard Overview
@@ -766,6 +776,75 @@ with tab1:
         st.info("Select stocks to track in the sidebar")
 
 with tab2:
+    # Edge / Watchlist - catch blow-ups early
+    st.header("🚀 Edge / Watchlist")
+    st.markdown(
+        "**Catch movers early:** screen for **unusual volume** and **momentum**. "
+        "Stocks with volume spikes and positive price action often move before headlines."
+    )
+    scan_tickers = tracked_stocks if tracked_stocks else (available_stocks[:50] if available_stocks else [])
+    col_scan, col_info = st.columns([1, 2])
+    with col_scan:
+        do_scan = st.button("🔍 Scan for edge", type="primary", use_container_width=True)
+    with col_info:
+        if scan_tickers:
+            st.caption(f"Scanning up to {min(50, len(scan_tickers))} tickers from your list.")
+        else:
+            st.caption("Add stocks to track in the sidebar, or pick a list above to scan.")
+    if do_scan and scan_tickers:
+        to_scan = (scan_tickers[:50] if len(scan_tickers) > 50 else scan_tickers)
+        with st.spinner("Scanning volume & momentum..."):
+            try:
+                uv_df, tp_df, wl_df = run_full_scan(to_scan, period="1mo", min_volume_ratio=1.2, top_n=25)
+                st.session_state.edge_scan = {
+                    "unusual_volume": uv_df,
+                    "top_performers": tp_df,
+                    "watchlist": wl_df,
+                    "tickers_scanned": to_scan,
+                }
+                st.success(f"Scanned {len(to_scan)} tickers.")
+            except Exception as e:
+                logger.error(f"Edge scan failed: {e}", exc_info=True)
+                st.error(f"Scan failed: {str(e)}")
+    edge = st.session_state.edge_scan
+    has_any = edge and (
+        (edge.get("unusual_volume") is not None and not edge["unusual_volume"].empty)
+        or (edge.get("top_performers") is not None and not edge["top_performers"].empty)
+        or (edge.get("watchlist") is not None and not edge["watchlist"].empty)
+    )
+    if has_any:
+        uv = edge.get("unusual_volume")
+        if uv is not None and not uv.empty:
+            st.subheader("📊 Unusual volume (today vs 20d avg)")
+            uv_display = uv.rename(columns={
+                "volume_ratio": "Vol ratio",
+                "current_volume": "Volume",
+                "avg_volume": "Avg vol",
+                "return_1d_pct": "1d %",
+                "return_5d_pct": "5d %",
+            })
+            st.dataframe(uv_display[["ticker", "price", "Vol ratio", "Volume", "Avg vol", "1d %", "5d %"]], use_container_width=True)
+        else:
+            st.subheader("📊 Unusual volume")
+            st.caption("No tickers above 1.2× average volume in this scan.")
+        tp = edge.get("top_performers")
+        if tp is not None and not tp.empty:
+            st.subheader("📈 Top performers (5d return)")
+            tp_display = tp.rename(columns={"return_1d_pct": "1d %", "return_5d_pct": "5d %", "volume_ratio": "Vol ratio"})
+            st.dataframe(tp_display[["ticker", "price", "1d %", "5d %", "Vol ratio"]], use_container_width=True)
+        wl = edge.get("watchlist")
+        if wl is not None and not wl.empty:
+            st.subheader("🎯 Watchlist (volume + momentum score)")
+            st.caption("Higher score = unusual volume + positive momentum — potential early movers.")
+            wl_display = wl.rename(columns={"edge_score": "Score", "return_5d_pct": "5d %", "volume_ratio": "Vol ratio"})
+            st.dataframe(wl_display[["ticker", "price", "Score", "Vol ratio", "5d %"]], use_container_width=True)
+    else:
+        if not do_scan or not scan_tickers:
+            st.info("Click **Scan for edge** to find unusual volume and top performers. Use the sidebar to choose stocks to scan.")
+        else:
+            st.warning("No results for this list. Try more tickers or check data availability.")
+
+with tab3:
     # News Analysis
     st.header("📰 Financial News Analysis")
     
@@ -823,7 +902,7 @@ with tab2:
     else:
         st.info("No news data available. Click 'Fetch Latest Data' to get news.")
 
-with tab3:
+with tab4:
     # Trading Signals
     st.header("📊 Trading Signals")
     
@@ -896,7 +975,7 @@ with tab3:
     else:
         st.info("No trading signals available. Click 'Fetch Latest Data' to generate signals.")
 
-with tab4:
+with tab5:
     # Portfolio Tracker
     st.header("💼 Portfolio Tracker")
     
@@ -986,7 +1065,7 @@ with tab4:
     else:
         st.info("No trade history available.")
 
-with tab5:
+with tab6:
     # Big Mover Tracker
     st.header("🚀 Big Mover Tracker")
     st.subheader("Real-time monitoring for stocks before they skyrocket")
