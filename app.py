@@ -633,7 +633,7 @@ if st.sidebar.button("Fetch Latest Data"):
                                 st.error(f"Error fetching stock data for {stock}: {str(e)}")
                                 logger.error(f"Error fetching stock data for {stock}: {str(e)}", exc_info=True)
                 
-                # Generate trading signals with error handling
+                # Generate trading signals with error handling - this is the core of the trading strategy
                 try:
                     with LogContext(logger, "generate_signals"):
                         signals = generate_signals(
