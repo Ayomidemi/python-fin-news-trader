@@ -1297,3 +1297,68 @@ See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-3243
 2025-10-16 23:25:35,518 - alert_system - INFO - Added alert rule: gap_up
 2025-10-16 23:25:35,519 - alert_system - INFO - Added alert rule: breakout
 2025-10-16 23:25:35,519 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:15:43,198 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:15:43,211 - cache - INFO - Cache manager initialized with MemoryCache backend
+2026-03-10 11:15:46,275 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:15:46,327 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:15:46,328 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:15:46,328 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:15:46,328 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:16:08,321 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:16:10,004 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:16:10,004 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:16:10,004 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:16:10,004 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:16:10,004 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:16:43,872 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:16:43,882 - app - INFO - Starting fetch_latest_data - 
+2026-03-10 11:16:43,884 - app - INFO - Starting async_complete_pipeline - 
+2026-03-10 11:16:43,885 - async_processor - INFO - Starting complete_pipeline - tickers=['AAPL', 'GOOGL', 'AMZN', 'META']
+2026-03-10 11:16:43,885 - async_processor - INFO - Step 1: Fetching news and stock data in parallel
+2026-03-10 11:16:43,886 - async_processor - INFO - Fetching news for 4 tickers in parallel
+2026-03-10 11:16:43,887 - async_processor - INFO - Fetching stock data for 4 tickers in parallel
+2026-03-10 11:16:44,351 - async_processor - INFO - Fetched stock data for AAPL
+2026-03-10 11:16:44,351 - async_processor - INFO - Fetched stock data for GOOGL
+2026-03-10 11:16:44,351 - async_processor - INFO - Fetched stock data for AMZN
+2026-03-10 11:16:44,351 - async_processor - INFO - Fetched stock data for META
+2026-03-10 11:16:44,588 - async_processor - INFO - Fetched 10 articles for AAPL
+2026-03-10 11:16:44,589 - async_processor - INFO - Fetched 10 articles for GOOGL
+2026-03-10 11:16:44,589 - async_processor - INFO - Fetched 10 articles for AMZN
+2026-03-10 11:16:44,589 - async_processor - INFO - Fetched 10 articles for META
+2026-03-10 11:16:44,589 - async_processor - INFO - Step 2: Analyzing sentiment for all articles
+2026-03-10 11:16:44,589 - async_processor - INFO - Analyzing sentiment for 40 articles in parallel
+2026-03-10 11:16:44,599 - async_processor - INFO - Complete pipeline processed in 0.71 seconds
+2026-03-10 11:16:44,599 - async_processor - INFO - Completed complete_pipeline in 0.71s
+2026-03-10 11:16:44,613 - app - INFO - Async pipeline: fetched 40 articles total
+2026-03-10 11:16:44,633 - app - INFO - Completed async_complete_pipeline in 0.75s
+2026-03-10 11:16:44,634 - app - INFO - Starting generate_signals - 
+2026-03-10 11:16:44,635 - app - INFO - Generated 0 trading signals
+2026-03-10 11:16:44,636 - app - INFO - Completed generate_signals in 0.00s
+2026-03-10 11:16:44,637 - app - INFO - Starting update_portfolio - 
+2026-03-10 11:16:44,638 - app - INFO - Portfolio updated successfully
+2026-03-10 11:16:44,638 - app - INFO - Completed update_portfolio in 0.00s
+2026-03-10 11:16:44,638 - app - INFO - Data fetch completed successfully
+2026-03-10 11:16:44,639 - app - INFO - Completed fetch_latest_data in 0.76s
+2026-03-10 11:16:47,642 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:16:47,644 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:16:47,644 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:16:47,645 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:16:47,645 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:17:09,868 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:17:11,210 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:17:11,211 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:17:11,211 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:17:11,211 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:17:11,211 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:17:12,023 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:17:13,149 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:17:13,246 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:17:13,246 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:17:13,246 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:17:13,247 - alert_system - INFO - Added alert rule: high_impact_news
+2026-03-10 11:17:13,447 - app - INFO - Starting FinNews Trader application
+2026-03-10 11:17:14,234 - alert_system - INFO - Added alert rule: price_spike
+2026-03-10 11:17:14,234 - alert_system - INFO - Added alert rule: volume_surge
+2026-03-10 11:17:14,234 - alert_system - INFO - Added alert rule: gap_up
+2026-03-10 11:17:14,234 - alert_system - INFO - Added alert rule: breakout
+2026-03-10 11:17:14,234 - alert_system - INFO - Added alert rule: high_impact_news
