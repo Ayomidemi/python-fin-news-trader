@@ -653,12 +653,12 @@ if st.sidebar.button("Fetch Latest Data"):
                     logger.error(f"Unexpected error generating signals: {str(e)}", exc_info=True)
                     signals = []
                 
-                # Update session state
+                # Update session state 
                 st.session_state.news_data = news_data
                 st.session_state.signals = signals
                 st.session_state.last_update = datetime.now()
                 
-                # Update portfolio based on signals
+                # Update portfolio based on signals 
                 try:
                     with LogContext(logger, "update_portfolio"):
                         st.session_state.portfolio = update_portfolio(
@@ -674,7 +674,7 @@ if st.sidebar.button("Fetch Latest Data"):
                 st.success(f"Data updated successfully! Fetched {len(news_data)} articles and generated {len(signals)} signals.")
                 logger.info("Data fetch completed successfully")
 
-# Main content area - use tabs
+# Main content area - use tabs (fixed)
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Dashboard",
     "🚀 Edge / Watchlist",
