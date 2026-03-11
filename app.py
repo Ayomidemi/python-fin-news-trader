@@ -755,7 +755,7 @@ with tab1:
         </div>
         """, unsafe_allow_html=True)
     
-    # Performance Chart
+    # Performance Chart (fixed)
     st.subheader("Portfolio Performance")
     if len(st.session_state.portfolio['performance']) > 0:
         plot_portfolio_performance(st.session_state.portfolio['performance'])
