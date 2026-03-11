@@ -685,7 +685,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
 ])
 
 with tab1:
-    # Dashboard Overview - a single page with all the information
+    # Dashboard Overview - a single page with all the information (fixed)
     st.header("Trading Dashboard")
     
     col1, col2, col3 = st.columns(3)
