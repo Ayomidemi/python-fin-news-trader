@@ -944,7 +944,7 @@ with tab4:
         fig.update_layout(title_text="Backtest Equity Curve")
         st.plotly_chart(fig, use_container_width=True)
         
-        # Display trades
+        # Display trades (formatted)
         st.subheader("Backtest Trades")
         trades_df = pd.DataFrame(backtest_results['trades'])
         if len(trades_df) > 0:
@@ -961,7 +961,7 @@ with tab4:
         signals_df.columns = ['Timestamp', 'Stock', 'Action', 'Price', 'Reason', 'Stop Loss', 'Take Profit']
         signals_df = signals_df.sort_values('Timestamp', ascending=False)
         
-        # Apply color to action values
+        # Apply color to action values (formatted)
         def color_action(val):
             if val == 'BUY':
                 return 'background-color: rgba(0, 255, 0, 0.2)'
