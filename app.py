@@ -862,7 +862,7 @@ with tab3:
         
         avg_sentiment = {ticker: sum(scores)/len(scores) for ticker, scores in sentiment_by_stock.items()}
         
-        # Create a bar chart
+        # Create a bar chart of average sentiment by stock
         fig = px.bar(
             x=list(avg_sentiment.keys()),
             y=list(avg_sentiment.values()),
@@ -878,7 +878,7 @@ with tab3:
         st.subheader("Sentiment Trends")
         plot_sentiment_over_time(st.session_state.news_data)
         
-        # News Articles Table
+        # News Articles Table (sorted by sentiment)
         st.subheader("Recent Financial News")
         news_df = pd.DataFrame(st.session_state.news_data)
         if len(news_df) > 0:
@@ -919,7 +919,7 @@ with tab4:
             take_profit_pct
         )
         
-        # Display backtest metrics
+        # Display backtest metrics (formatted)
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
@@ -934,7 +934,7 @@ with tab4:
         with col4:
             st.metric("Max Drawdown", f"{backtest_results['max_drawdown_pct']:.2f}%")
         
-        # Plot backtest equity curve
+        # Plot backtest equity curve (formatted)
         st.subheader("Backtest Equity Curve")
         fig = px.line(
             x=backtest_results['dates'],
