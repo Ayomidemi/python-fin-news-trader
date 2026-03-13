@@ -1067,14 +1067,14 @@ with tab5:
         st.info("No trade history available.")
 
 with tab6:
-    # Big Mover Tracker
+    # Big Mover Tracker (fixed)
     st.header("🚀 Big Mover Tracker")
     st.subheader("Real-time monitoring for stocks before they skyrocket")
     
-    # Run the big mover dashboard
+    # Run the big mover dashboard (fixed)
     run_big_mover_dashboard()
 
-# Footer
+# Footer (fixed)
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid rgba(59, 130, 246, 0.2);">
     <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0; font-weight: 300;">
