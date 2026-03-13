@@ -979,7 +979,7 @@ with tab5:
     # Portfolio Tracker
     st.header("💼 Portfolio Tracker")
     
-    # Portfolio Summary
+    # Portfolio Summary (fixed)
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -991,6 +991,7 @@ with tab5:
         """, unsafe_allow_html=True)
     
     with col2:
+        # Calculate positions value (fixed)
         positions_value = 0
         for ticker, position in st.session_state.portfolio['positions'].items():
             try:
